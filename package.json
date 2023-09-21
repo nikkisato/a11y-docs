@@ -8,10 +8,15 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.16.7",
     "next": "latest",
+    "next-sanity": "^5.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "server-only": "^0.0.1"
+    "sanity": "^3.16.7",
+    "server-only": "^0.0.1",
+    "styled-components": "5.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.1.2",
