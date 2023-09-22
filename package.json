@@ -6,7 +6,7 @@
 		"start": "next start",
 		"test": "jest --watch",
 		"test:ci": "jest --ci",
-		"sanity": "cd studio && sanity start",
+		"sanity": "cd studio && sanity dev",
 		"lint": "next lint"
 	},
 	"dependencies": {
