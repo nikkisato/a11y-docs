@@ -5,9 +5,12 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "prebuild": "echo 'Building Sanity to /studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
+    "sanity": "cd studio && sanity start",
+    "lint": "next lint"
   },
-  "dependencies": {
+  "dependencies": {   
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.16.7",
     "next": "latest",
