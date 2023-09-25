@@ -1,35 +1,37 @@
-# Next.js + Jest
+# Accessibility Component Library Documentation 
+## Goals 
+- Want to able "search" for how to build an accessible Button Component for React, HTML/CSS, and Liquid, more coming soon, possibly typescript
+- https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/ 
+  - This website is a good starting point 
 
-This example shows how to configure Jest to work with Next.js.
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
 
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
 
-## Deploy your own
+[] Accessible Autocomplete Search
+[] Accessible Button
+[] Accessible Icon Buttons
+[] Accessible Links
+[] Accessible Icon Links
+[] Accessible Disabled Button
+[] Accessible Cards 
+[] Accessible Carousels 
+[] Accessible Content Sliders
+[] Accessible Close Button
+[] Accessible Checkboxes
+[] Accessible Radio Buttons
+[] Accessible Horizontal Dividers 
+[] Accessible Inputs
+[] Accessible Tap/Click Menu
+[] Accessible Modals
+[] Accessible Password Fields
+[] Accessible Skip Links
+[] Accessible SVG
+[] Accessible Tabs
+[] Accessible Tables
+[] Accessible Toggle Switches 
+[] Accessible Tooltips
+[] Accessible Toggletips
+[] Accessible Video Players
+[] Accessible Audio Players
+[] Accessible Forms
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
-
-## How to Use
-
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
-
-In your terminal, run the following command:
-
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
-
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
-
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
-
-## Running Tests
-
-```bash
-npm test
-```
