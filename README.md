@@ -18,25 +18,46 @@
 [] Accessible Icon Links
 
 [] Accessible Disabled Button
+
 [] Accessible Cards 
+
 [] Accessible Carousels 
+
 [] Accessible Content Sliders
+
 [] Accessible Close Button
+
 [] Accessible Checkboxes
+
 [] Accessible Radio Buttons
+
 [] Accessible Horizontal Dividers 
+
 [] Accessible Inputs
+
 [] Accessible Tap/Click Menu
+
 [] Accessible Modals
+
 [] Accessible Password Fields
+
 [] Accessible Skip Links
+
 [] Accessible SVG
+
 [] Accessible Tabs
+
 [] Accessible Tables
+
 [] Accessible Toggle Switches 
+
 [] Accessible Tooltips
+
 [] Accessible Toggletips
+
 [] Accessible Video Players
+
 [] Accessible Audio Players
+
 [] Accessible Forms
 
