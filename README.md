@@ -5,7 +5,9 @@
   - This website is a good starting point 
 - https://nostyle.onrender.com/
 
-
+- How we structure the website, look at sanity how are we showcasing the components !important (each be a page?)
+- Design first lo-fi
+- Research app layout and schema 
 
 
 [] Accessible Autocomplete Search
