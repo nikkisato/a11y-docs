@@ -8,7 +8,6 @@
     "test:ci": "jest --ci",
     "sanity": "cd studio && sanity dev",
     "lint": "next lint"
-
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.2",
@@ -22,14 +21,6 @@
     "styled-components": "5.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.5.0-alpha.5",
-    "@storybook/addon-interactions": "^7.5.0-alpha.5",
-    "@storybook/addon-links": "^7.5.0-alpha.5",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.5.0-alpha.5",
-    "@storybook/nextjs": "^7.5.0-alpha.5",
-    "@storybook/react": "^7.5.0-alpha.5",
-    "@storybook/testing-library": "^0.2.2",
     "@testing-library/jest-dom": "6.1.2",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
