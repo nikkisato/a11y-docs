@@ -1,0 +1,27 @@
+.headerContainer {
+	background-color: pink;
+	width: 100vw;
+	height: 15vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.headerLeftMenu {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.headerMiddle {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.headerRightMenu {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
