@@ -1,6 +1,6 @@
 .container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: normal;
 	align-items: normal;
