@@ -1,30 +1,17 @@
-import Image from 'next/image';
+import '../styles/reset.css';
+import '../styles/global.css';
+import Container from '../src/components/Container/Container';
+import Sidebar from 'src/components/Sidebar/Sidebar';
+import Content from 'src/components/Content/Content';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<body>
-				<header>
-					<h1>HELLO</h1>
-				</header>
-				{children}
-				<footer>
-					<a
-						href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Powered by{' '}
-						<span>
-							<Image
-								src="/vercel.svg"
-								alt="Vercel Logo"
-								width={72}
-								height={16}
-							/>
-						</span>
-					</a>
-				</footer>
+				<Container>
+					<Sidebar />
+					<Content>{children}</Content>
+				</Container>
 			</body>
 		</html>
 	);
