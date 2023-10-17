@@ -1,0 +1,29 @@
+.footerContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 0px;
+	height: 10vh;
+}
+
+.footerCopyright {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footerSocial {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footerStatement {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
