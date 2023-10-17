@@ -1,11 +1,12 @@
 'use client';
 
 import styles from './Input.module.css';
-import { ReactNode } from 'react';
+import React from 'react';
 import Button from '../Button/Button';
 
 const handleClick = () => {
 	// Handle button click logic here
+	console.log('Button clicked');
 };
 interface Props {
 	label: string;
@@ -13,10 +14,9 @@ interface Props {
 	placeholder: string;
 	id: string;
 	name: string;
-	icon?: ReactNode;
+	icon?: React.ReactNode;
 }
 
-//TODO: ASK CHRIS ABOUT ICON can i do like this has an icon show it if it doesn't don't show it
 export default function Input({
 	label = ' ',
 	type = '',
@@ -33,14 +33,15 @@ export default function Input({
 				type={type}
 				placeholder={placeholder}
 				name={name}
+				className={styles.input}
 			/>
 			<Button
 				link="#"
 				type="button"
 				icon={icon}
+				iconRight={true}
+				onClick={handleClick}
 			/>
 		</div>
 	);
 }
-
-// Input ==> Search Icon ==> Button

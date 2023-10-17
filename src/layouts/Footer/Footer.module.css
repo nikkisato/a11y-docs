@@ -4,7 +4,7 @@
 	grid-template-rows: 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 0px;
-	height: 5vh;
+	height: 10vh;
 }
 
 .footerCopyright {
@@ -12,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 5vh;
+	height: 10vh;
 }
 
 .footerSocial {
@@ -20,7 +20,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 5vh;
+	height: 10vh;
 }
 
 .footerStatement {
@@ -28,5 +28,5 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 5vh;
+	height: 10vh;
 }
