@@ -1,15 +1,17 @@
 .headerContainer {
-	background-color: pink;
-	width: 100vw;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 0px;
 	height: 10vh;
-	display: flex;
-	flex-direction: row;
 }
 
-.headerLeftMenu {
+.headerLeft {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	height: 10vh;
 }
 
 .headerMiddle {
@@ -17,11 +19,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 10vh;
 }
 
-.headerRightMenu {
+.headerRight {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	height: 10vh;
 }
