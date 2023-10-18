@@ -9,7 +9,7 @@ interface Props {
 	iconLeft?: boolean;
 	iconRight?: boolean;
 	type: string;
-	onClick: () => void;
+	// onClick: () => void;
 }
 
 export default function Button({
@@ -19,11 +19,13 @@ export default function Button({
 	iconRight = false,
 	iconLeft = false,
 	type = '',
-	onClick = () => {},
-}: Props) {
+}: // onClick = () => {},
+Props) {
 	return (
 		<>
-			<button onClick={onClick}>
+			<button
+			// onClick={onClick}
+			>
 				{iconLeft && icon}
 				{text}
 				{iconRight && icon}

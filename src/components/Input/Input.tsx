@@ -4,10 +4,10 @@ import styles from './Input.module.css';
 import React from 'react';
 import Button from '../Button/Button';
 
-const handleClick = () => {
-	// Handle button click logic here
-	console.log('Button clicked');
-};
+// const handleClick = () => {
+// 	// Handle button click logic here
+// 	console.log('Button clicked');
+// };
 interface Props {
 	label: string;
 	type: string;
@@ -40,7 +40,7 @@ export default function Input({
 				type="button"
 				icon={icon}
 				iconRight={true}
-				onClick={handleClick}
+				// onClick={handleClick}
 			/>
 		</div>
 	);
