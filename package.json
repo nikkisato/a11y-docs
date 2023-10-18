@@ -18,7 +18,6 @@
     "@sanity/code-input": "^4.1.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.18.0",
-    "i": "^0.3.7",
     "next": "latest",
     "next-sanity": "^5.5.4",
     "next-sanity-client": "^1.0.7",
