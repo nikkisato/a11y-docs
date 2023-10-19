@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+// import React from 'react';
 
 interface Props {
 	link: string;
@@ -9,7 +9,6 @@ interface Props {
 	iconLeft?: boolean;
 	iconRight?: boolean;
 	type: string;
-	// onClick: () => void;
 }
 
 export default function Button({
@@ -19,13 +18,10 @@ export default function Button({
 	iconRight = false,
 	iconLeft = false,
 	type = '',
-}: // onClick = () => {},
-Props) {
+}: Props) {
 	return (
 		<>
-			<button
-			// onClick={onClick}
-			>
+			<button>
 				{iconLeft && icon}
 				{text}
 				{iconRight && icon}
