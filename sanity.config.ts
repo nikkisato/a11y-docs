@@ -1,7 +1,7 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
-import { schemaTypes } from './studio/schemas';
+import { schema } from './studio/schemas/schema';
 import { codeInput } from '@sanity/code-input';
 
 export default defineConfig({
@@ -9,11 +9,7 @@ export default defineConfig({
 	title: 'a11y-docs-cms',
 	projectId: 'ncg6rrlr',
 	dataset: 'production',
-	useCdn: false,
-
+	useCdn: true,
 	plugins: [deskTool(), visionTool(), codeInput()],
-
-	schema: {
-		types: schemaTypes,
-	},
+	schema,
 });

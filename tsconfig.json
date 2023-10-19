@@ -42,7 +42,7 @@
     "**/*.tsx",
     "types.d.ts",
     ".next/types/**/*.ts"
-  ],
+, "next.config.js"  ],
   "exclude": [
     "node_modules"
   ]
