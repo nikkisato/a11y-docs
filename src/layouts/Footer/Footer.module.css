@@ -12,6 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 10vh;
 }
 
 .footerSocial {
@@ -19,6 +20,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 10vh;
 }
 
 .footerStatement {
@@ -26,4 +28,5 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 10vh;
 }

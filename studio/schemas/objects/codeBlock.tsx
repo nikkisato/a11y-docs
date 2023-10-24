@@ -1,9 +1,9 @@
 import {defineType, defineField} from 'sanity'
 
 export default defineType({
-  name: 'button',
+  name: 'codeBlock',
   type: 'document',
-  title: 'Button',
+  title: 'Code Block',
   fields: [
     defineField({
       type: 'string',

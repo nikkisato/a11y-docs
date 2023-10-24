@@ -1,15 +1,30 @@
-import { useState } from 'react';
+'use client';
 
-export default function Counter() {
-	const [count, setCount] = useState(0);
+// import React from 'react';
+
+interface Props {
+	link: string;
+	text?: string;
+	icon: React.ReactNode;
+	iconLeft?: boolean;
+	iconRight?: boolean;
+	type: string;
+}
+
+export default function Button({
+	link = '',
+	text = '',
+	icon = '',
+	iconRight = false,
+	iconLeft = false,
+	type = '',
+}: Props) {
 	return (
 		<>
-			<h2>{count}</h2>
-			<button
-				type="button"
-				onClick={() => setCount(count + 1)}
-			>
-				+
+			<button>
+				{iconLeft && icon}
+				{text}
+				{iconRight && icon}
 			</button>
 		</>
 	);
