@@ -1,0 +1,31 @@
+.headerContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 0px;
+	height: 10vh;
+}
+
+.headerLeft {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	height: 10vh;
+}
+
+.headerMiddle {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+}
+
+.headerRight {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 10vh;
+}
