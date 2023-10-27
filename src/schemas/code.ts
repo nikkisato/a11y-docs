@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'codeBlock',
@@ -54,6 +54,16 @@ export default defineType({
       title: 'Liquid',
       options: {
         language: 'plaintext',
+      },
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'title',
+        maxLength: 96,
       },
     }),
   ],

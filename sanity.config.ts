@@ -5,6 +5,8 @@
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
+import { codeInput } from '@sanity/code-input'
+
 import {
   defineUrlResolver,
   Iframe,
@@ -39,6 +41,7 @@ export default defineConfig({
   //edit schemas in './src/schemas'
   schema,
   plugins: [
+    codeInput(),
     deskTool({
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       // You can add any React component to `S.view.component` and it will be rendered in the pane
