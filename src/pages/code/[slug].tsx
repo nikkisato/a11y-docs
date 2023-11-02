@@ -4,7 +4,12 @@ import { useLiveQuery } from 'next-sanity/preview'
 import Container from '~/components/Container/Container'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
-import { type Code, codeQuery, getCode } from '~/lib/sanity.queries'
+import {
+  type Code,
+  codeQuery,
+  getCode,
+  codeBySlugQuery,
+} from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 
 interface Query {
@@ -38,11 +43,9 @@ export const getStaticProps: GetStaticProps<
 export default function ProjectSlugRoute(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
-  const [code] = useLiveQuery(props.code, codeQuery, {
+  const [code] = useLiveQuery(props.code, codeBySlugQuery, {
     slug: props.code.slug,
   })
-
-  console.log('props.code.slug', props.code)
 
   return (
     <Container>

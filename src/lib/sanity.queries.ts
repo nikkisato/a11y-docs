@@ -7,15 +7,20 @@ export const codeQuery = groq`*[_type == "codeBlock" && defined(slug.current)] |
 export async function getCodes(client: SanityClient): Promise<Code[]> {
   return await client.fetch(codeQuery)
 }
+export const codeBySlugQuery = groq`*[_type == "codeBlock" && slug.current == $slug][0]`
 
 export async function getCode(
   client: SanityClient,
   slug: string,
 ): Promise<Code> {
-  return await client.fetch(codeQuery, {
+  return await client.fetch(codeBySlugQuery, {
     slug,
   })
 }
+
+export const codeSlugsQuery = groq`
+*[_type == "codeBlock" && defined(slug.current)][].slug.current
+`
 
 export interface CodeInput {
   html: string
