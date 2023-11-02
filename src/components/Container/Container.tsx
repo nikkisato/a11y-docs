@@ -1,9 +1,15 @@
-import styles from './Container.module.css';
+import Link from 'next/link'
 
-interface Props {
-	children: React.ReactNode;
-}
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
+import styles from './Container.module.css'
 
-export default function Container({ children }: Props) {
-	return <section className={styles.container}>{children}</section>;
+export default function Container({ children }: { children: React.ReactNode }) {
+  return (
+    <div className={styles.container}>
+      {/* <Header /> */}
+      <main>{children}</main>
+      {/* <Footer /> */}
+    </div>
+  )
 }
