@@ -1,7 +1,7 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'code',
+  name: 'codeBlock',
   type: 'document',
   title: 'Code',
   fields: [
