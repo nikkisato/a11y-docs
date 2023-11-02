@@ -39,8 +39,10 @@ export default function ProjectSlugRoute(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
   const [code] = useLiveQuery(props.code, codeQuery, {
-    slug: props.code.slug.current,
+    slug: props.code.slug,
   })
+
+  console.log('props.code.slug', props.code)
 
   return (
     <Container>
