@@ -1,8 +1,8 @@
 'use client'
 
-import styles from './Input.module.css'
 // import React from 'react';
 import Button from '../Button/Button'
+import styles from './Input.module.css'
 
 interface Props {
   label: string

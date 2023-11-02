@@ -17,8 +17,6 @@ export const getStaticProps: GetStaticProps<
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const codes = await getCodes(client)
 
-  console.log('codes', codes)
-
   return {
     props: {
       draftMode,
@@ -31,16 +29,15 @@ export const getStaticProps: GetStaticProps<
 export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
-  console.log('props', props)
   const [codes] = useLiveQuery<Code[]>(props.codes, codeQuery)
+  // console.log('CODES', codes)
 
-  console.log('CODES', codes)
   return (
     <Container>
       <section>
-        {/* {codes.map((code) => (
+        {codes.map((code) => (
           <CodeCard key={code._id} code={code} />
-        ))} */}
+        ))}
       </section>
     </Container>
   )

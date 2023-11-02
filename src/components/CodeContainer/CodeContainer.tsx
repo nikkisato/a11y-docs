@@ -24,6 +24,6 @@ export default function CodeContainer({
   liquid = '',
   slug = '',
 }: Props) {
-  console.log('PROPS', title)
+  // console.log('PROPS', title)
   return <div>{title}</div>
 }

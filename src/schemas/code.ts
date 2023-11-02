@@ -1,9 +1,9 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'codeBlock',
+  name: 'code',
   type: 'document',
-  title: 'Code Block',
+  title: 'Code',
   fields: [
     defineField({
       type: 'string',
@@ -11,7 +11,7 @@ export default defineType({
       title: 'Title',
     }),
     defineField({
-      title: 'Content',
+      title: 'content',
       name: 'content',
       type: 'array',
       of: [{ type: 'block' }],
@@ -50,7 +50,7 @@ export default defineType({
     }),
     defineField({
       type: 'code',
-      name: 'richtext',
+      name: 'liquid',
       title: 'Liquid',
       options: {
         language: 'plaintext',

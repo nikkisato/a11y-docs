@@ -1,7 +1,8 @@
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
-import styles from './Footer.module.css'
 import Link from 'next/link'
+
+import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
