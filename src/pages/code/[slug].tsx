@@ -1,12 +1,9 @@
-import { PortableText } from '@portabletext/react'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import Image from 'next/image'
 import { useLiveQuery } from 'next-sanity/preview'
 
 import Container from '~/components/Container/Container'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
-import { urlForImage } from '~/lib/sanity.image'
 import { type Code, codeQuery, getCode } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 
@@ -41,7 +38,6 @@ export const getStaticProps: GetStaticProps<
 export default function ProjectSlugRoute(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
-  // console.log('props', props)
   const [code] = useLiveQuery(props.code, codeQuery, {
     slug: props.code.slug.current,
   })
