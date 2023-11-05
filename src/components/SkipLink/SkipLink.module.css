@@ -1,0 +1,22 @@
+.skipLink {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 100px;
+    top: 15px; 
+    left: 15px;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;  
+}
+
+.skipLink:focus {
+    clip: auto;
+    height: auto;
+    overflow: auto;
+    position: absolute;
+    width: auto;
+}

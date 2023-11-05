@@ -6,9 +6,9 @@ import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import {
   type Code,
+  codeBySlugQuery,
   codeQuery,
   getCode,
-  codeBySlugQuery,
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 
