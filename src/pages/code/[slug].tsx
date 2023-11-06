@@ -1,6 +1,7 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
 
+import CodeContainer from '~/components/CodeContainer/CodeContainer'
 import Container from '~/components/Container/Container'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
@@ -50,6 +51,7 @@ export default function ProjectSlugRoute(
   return (
     <Container>
       <div>{code.title}</div>
+      <CodeContainer code={code} />
     </Container>
   )
 }

@@ -1,11 +1,12 @@
 import { type Code } from '~/lib/sanity.queries'
 
+import CodeOutput from '../CodeOutput/CodeOutput'
+
 export default function CodeCard({ code }: { code: Code }) {
-  console.log('codeBOB', code.css)
+  console.log(code)
   return (
     <div className="card">
-      <h3>{code.title}</h3>
-      {/* <div>{code.css}</div> */}
+      <CodeOutput code={code} />
     </div>
   )
 }

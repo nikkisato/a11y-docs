@@ -22,14 +22,6 @@ export const codeSlugsQuery = groq`
 *[_type == "codeBlock" && defined(slug.current)][].slug.current
 `
 
-// export interface CodeInput {
-//   html: string
-//   css: string
-//   javascript: string
-//   typescript: string
-//   liquid: string
-// }
-
 export interface Code {
   _type: 'codeBlock'
   _id: string
@@ -37,7 +29,6 @@ export interface Code {
   title: string
   slug: Slug
   content: PortableTextBlock[]
-  // code: CodeInput[]
   html: string
   css: string
   javascript: string
