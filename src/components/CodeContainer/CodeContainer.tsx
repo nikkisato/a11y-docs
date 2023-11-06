@@ -5,16 +5,6 @@ import CodeCard from '../CodeCard/CodeCard'
 import Heading from '../Heading/Heading'
 import styles from './CodeContainer.module.css'
 
-interface CodeContainerProps {
-  code: {
-    css: string
-    html: string
-    javascript: string
-    typescript: string
-    liquid: string
-  }
-}
-
 export default function CodeContainer({ code }: { code: Code }) {
   console.log('CODE CONTAINER', code)
   return (

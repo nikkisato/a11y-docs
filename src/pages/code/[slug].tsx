@@ -50,7 +50,7 @@ export default function ProjectSlugRoute(
 
   return (
     <Container>
-      <div>{code.title}</div>
+      {/* <div>{code.title}</div> */}
       <CodeContainer code={code} />
     </Container>
   )

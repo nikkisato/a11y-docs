@@ -4,53 +4,54 @@ import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import Heading from '../Heading/Heading'
 
 export default function CodeOutput({ code }) {
-  console.log('CODE OUTPUT', code)
+  const { css, html, javascript, typescript, liquid } = code
 
-  switch (code) {
-    case 'css':
-      return (
+  return (
+    <>
+      {css && (
         <>
           <Heading headingType="h4" text="CSS" />
           <SyntaxHighlighter language="css" style={dracula}>
-            {code.css}
+            {css.code}
           </SyntaxHighlighter>
         </>
-      )
-    case 'html':
-      return (
+      )}
+
+      {html && (
         <>
           <Heading headingType="h4" text="HTML" />
           <SyntaxHighlighter language="html" style={dracula}>
-            {code.html}
+            {html.code}
           </SyntaxHighlighter>
         </>
-      )
-    case 'javascript':
-      return (
+      )}
+
+      {javascript && (
         <>
-          <Heading headingType="h4" text="Javascript" />
+          <Heading headingType="h4" text="JavaScript" />
           <SyntaxHighlighter language="javascript" style={dracula}>
-            {code.javascript}
+            {javascript}
           </SyntaxHighlighter>
         </>
-      )
-    case 'typescript':
-      return (
+      )}
+
+      {typescript && (
         <>
-          <Heading headingType="h4" text="Typescript" />
+          <Heading headingType="h4" text="TypeScript" />
           <SyntaxHighlighter language="typescript" style={dracula}>
-            {code.typescript}
+            {typescript}
           </SyntaxHighlighter>
         </>
-      )
-    case 'liquid':
-      return (
+      )}
+
+      {liquid && (
         <>
           <Heading headingType="h4" text="Liquid" />
           <SyntaxHighlighter language="liquid" style={dracula}>
-            {code}
+            {liquid}
           </SyntaxHighlighter>
         </>
-      )
-  }
+      )}
+    </>
+  )
 }
