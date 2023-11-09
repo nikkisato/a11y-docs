@@ -3,13 +3,15 @@ import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import Input from '../Input/Input'
+import Menu from '../Menu/Menu'
 import styles from './Header.module.css'
 
 export default function Header() {
   return (
     <>
       <header className={styles.headerContainer}>
-        <div className={styles.headerLeft}>
+        <Menu />
+        {/* <div className={styles.headerLeft}>
           <MenuIcon className="icon" />
         </div>
         <div className={styles.headerMiddle}>
@@ -24,7 +26,7 @@ export default function Header() {
         </div>
         <div className={styles.headerRight}>
           <SettingsIcon className="icon" />
-        </div>
+        </div> */}
       </header>
     </>
   )
