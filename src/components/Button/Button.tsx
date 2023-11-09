@@ -1,31 +1,12 @@
+
+
 'use client'
 
-// import React from 'react';
-
 interface Props {
-  link: string
-  text?: string
-  icon: React.ReactNode
-  iconLeft?: boolean
-  iconRight?: boolean
-  type: string
+  text: string
+  type: 'button' | 'submit'
 }
 
-export default function Button({
-  link = '',
-  text = '',
-  icon = '',
-  iconRight = false,
-  iconLeft = false,
-  type = '',
-}: Props) {
-  return (
-    <>
-      <button>
-        {iconLeft && icon}
-        {text}
-        {iconRight && icon}
-      </button>
-    </>
-  )
+export default function Button({ text = '', type }: Props) {
+  return <button type={type}>{text}</button>
 }

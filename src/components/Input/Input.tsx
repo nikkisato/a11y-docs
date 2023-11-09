@@ -1,7 +1,7 @@
 'use client'
 
 // import React from 'react';
-import Button from '../Button/Button'
+import IconButton from '../IconButton/IconButton'
 import styles from './Input.module.css'
 
 interface Props {
@@ -23,7 +23,9 @@ export default function Input({
 }: Props) {
   return (
     <div className={styles.inputContainer}>
-      <label htmlFor={id}>{label}</label>
+      <label className="sr-only" htmlFor={id}>
+        {label}
+      </label>
       <input
         id={id}
         type={type}
@@ -31,7 +33,7 @@ export default function Input({
         name={name}
         className={styles.input}
       />
-      <Button link="#" type="button" icon={icon} iconRight={true} />
+      <IconButton type="button" icon={icon} iconRight={true} />
     </div>
   )
 }
