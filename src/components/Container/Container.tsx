@@ -1,4 +1,5 @@
 import Content from '../Content/Content'
+import Drawer from '../Drawer/Drawer'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import SkipLink from '../SkipLink/SkipLink'
@@ -9,6 +10,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
     <div className={styles.container}>
       <SkipLink />
       <Header />
+      <Drawer closeButton={true} left={true} />
       <main id="main">
         <Content>{children}</Content>
       </main>

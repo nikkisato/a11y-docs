@@ -3,16 +3,29 @@ import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import Input from '../Input/Input'
-import Menu from '../Menu/Menu'
 import styles from './Header.module.css'
+import drawerStyles from '../Drawer/Drawer.module.css'
 
 export default function Header() {
+  const handleMenuClick = () => {
+    console.log('CLICK')
+    const hamburgerMenu = document.getElementById('hamburgerMenu')
+
+    const drawer = document.getElementById('drawer')
+
+    if (drawer) {
+      drawer.classList.add(drawerStyles.open)
+    }
+  }
   return (
     <>
       <header className={styles.headerContainer}>
-        <Menu />
-        {/* <div className={styles.headerLeft}>
-          <MenuIcon className="icon" />
+        <div className={styles.headerLeft}>
+          <MenuIcon
+            className="icon"
+            id="hamburgerMenu"
+            onClick={handleMenuClick}
+          />
         </div>
         <div className={styles.headerMiddle}>
           <Input
@@ -26,7 +39,7 @@ export default function Header() {
         </div>
         <div className={styles.headerRight}>
           <SettingsIcon className="icon" />
-        </div> */}
+        </div>
       </header>
     </>
   )
