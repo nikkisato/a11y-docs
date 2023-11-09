@@ -1,7 +1,7 @@
 export default function MenuBar({ children, ...props }) {
   const listProps = {
     ...props,
-    'aria-orientation': 'horizontal',
+    // 'aria-orientation': 'horizontal',
     'data-menubar-list': '',
     role: 'menubar',
   }

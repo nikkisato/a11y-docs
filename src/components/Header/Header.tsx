@@ -2,9 +2,9 @@ import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
 
+import drawerStyles from '../Drawer/Drawer.module.css'
 import Input from '../Input/Input'
 import styles from './Header.module.css'
-import drawerStyles from '../Drawer/Drawer.module.css'
 
 export default function Header() {
   const handleMenuClick = () => {
