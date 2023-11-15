@@ -1,0 +1,32 @@
+.nav {
+    margin-top: 10vh;
+}
+
+.nav ul  {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-direction: column;
+    padding: 0 24px;
+}
+
+.nav ul li {
+    margin: 1rem 0;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid blue;
+    height:100%;
+    width:100%;
+    display:block;
+    padding:10px 20px;
+}
+
+.nav ul li a:hover {
+    text-decoration: underline;
+}

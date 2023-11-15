@@ -1,10 +1,16 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { useContext } from 'react'
+
+import { MenuContext } from '../Container/Container'
 import { MenuBar } from '../MenuBar'
 import { MenuItem } from '../MenuItem'
+import styles from './Menu.module.css'
 
-export default function Menu() {
+export default function Menu({ children }: { children: React.ReactNode }) {
+  const { isDrawerOpen, setIsDrawerOpen } = useContext(MenuContext)
+  console.log('SAM', children)
   return (
-    <nav aria-label="Primary Navigation">
+    <nav aria-label="Primary Navigation" className={styles.nav}>
       <MenuBar aria-label="Primary Navigation">
         <MenuItem>
           <a href="/#about">About</a>

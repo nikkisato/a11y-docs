@@ -8,24 +8,24 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const handleMenuClick = () => {
-    console.log('CLICK')
+    console.log('HEADER')
     const hamburgerMenu = document.getElementById('hamburgerMenu')
 
     const drawer = document.getElementById('drawer')
 
     if (drawer) {
       drawer.classList.add(drawerStyles.open)
+    } else {
+      drawer.classList.remove(drawerStyles.open)
     }
   }
   return (
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerLeft}>
-          <MenuIcon
-            className="icon"
-            id="hamburgerMenu"
-            onClick={handleMenuClick}
-          />
+          <button onClick={handleMenuClick}>
+            <MenuIcon className="icon" id="hamburgerMenu" />
+          </button>
         </div>
         <div className={styles.headerMiddle}>
           <Input

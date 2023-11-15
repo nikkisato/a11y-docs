@@ -36,9 +36,14 @@
     transform: translateY(100%);
 }
 
-.right.open, .left.open, .top.open, .bottom.open {
-    transform: translateX(0);
+.right.open, .left.open {
+    transform: translateX(0) !important;
 }
+
+.top.open, .bottom.open {
+    transform: translateY(0) !important;
+}
+
 
 .closeTop {
     position:absolute;

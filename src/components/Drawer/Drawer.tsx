@@ -20,14 +20,13 @@ export default function Drawer({
   closeButton,
 }: DrawerProps) {
   const handleMenuClose = () => {
-    console.log('CLICK')
-
     const drawer = document.getElementById('drawer')
 
     if (drawer) {
       drawer.classList.remove(styles.open)
     }
   }
+
   const drawerClass = top
     ? styles.top
     : bottom
@@ -37,6 +36,8 @@ export default function Drawer({
     : right
     ? styles.right
     : styles.left
+
+  console.log('HELO', drawerClass)
 
   const closeDrawerClass = top
     ? styles.closeTop

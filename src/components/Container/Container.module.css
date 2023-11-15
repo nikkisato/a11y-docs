@@ -6,3 +6,9 @@
 	align-items: normal;
 	align-content: normal;
 }
+
+.main {
+	background-color: lightblue;
+	width: 100vw;
+	height: 80vh;
+}

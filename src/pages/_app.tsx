@@ -10,6 +10,8 @@ import { lazy } from 'react'
 export interface SharedPageProps {
   draftMode: boolean
   token: string
+  isDrawerOpen: boolean
+  setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const PreviewProvider = lazy(() => import('~/components/PreviewProvider'))
