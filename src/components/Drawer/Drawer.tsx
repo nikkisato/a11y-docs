@@ -1,6 +1,8 @@
 import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
+import { useContext } from 'react'
 
+import { MenuContext } from '../../pages/index'
 import Menu from '../Menu/Menu'
 import styles from './Drawer.module.css'
 
@@ -19,10 +21,13 @@ export default function Drawer({
   right,
   closeButton,
 }: DrawerProps) {
+  const { isDrawerOpen, setIsDrawerOpen } = useContext(MenuContext)
+
   const handleMenuClose = () => {
     const drawer = document.getElementById('drawer')
 
-    if (drawer) {
+    setIsDrawerOpen((isDrawerOpen) => !isDrawerOpen)
+    if (drawer.classList.contains(styles.open)) {
       drawer.classList.remove(styles.open)
     }
   }
@@ -36,8 +41,6 @@ export default function Drawer({
     : right
     ? styles.right
     : styles.left
-
-  console.log('HELO', drawerClass)
 
   const closeDrawerClass = top
     ? styles.closeTop
@@ -54,11 +57,15 @@ export default function Drawer({
       {closeButton && (
         <CloseIcon
           id="closeDrawerButton"
-          className={classNames('icon', closeDrawerClass)}
+          className={classNames(
+            'icon',
+            isDrawerOpen ? styles.open : '',
+            closeDrawerClass,
+          )}
           onClick={handleMenuClose}
         />
       )}
-      <Menu />
+      {/* <Menu children={children} /> */}
     </div>
   )
 }

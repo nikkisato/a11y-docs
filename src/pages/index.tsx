@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
 import { createContext, useContext, useState } from 'react'
@@ -12,8 +13,7 @@ export const MenuContext = createContext()
 
 const useDrawerState = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  console.log('SAM1', isDrawerOpen)
-  console.log('SAM2', setIsDrawerOpen)
+  console.log('isDrawerOpen', isDrawerOpen)
   return { isDrawerOpen, setIsDrawerOpen }
 }
 
@@ -23,17 +23,11 @@ export const getStaticProps: GetStaticProps<
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const codes = await getCodes(client)
 
-  // Use the custom hook to get initial state and update function
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { isDrawerOpen, setIsDrawerOpen } = useDrawerState()
-
   return {
     props: {
       draftMode,
       token: draftMode ? readToken : '',
       codes,
-      isDrawerOpen,
-      setIsDrawerOpen,
     },
   }
 }
@@ -41,12 +35,14 @@ export const getStaticProps: GetStaticProps<
 export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
+  const { isDrawerOpen, setIsDrawerOpen } = useDrawerState()
   const [codes] = useLiveQuery<Code[]>(props.codes, codeQuery)
+
   return (
     <MenuContext.Provider
       value={{
-        isDrawerOpen: props.isDrawerOpen,
-        setIsDrawerOpen: props.setIsDrawerOpen,
+        isDrawerOpen,
+        setIsDrawerOpen,
       }}
     >
       <Container></Container>

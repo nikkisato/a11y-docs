@@ -1,22 +1,25 @@
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
+import { useContext } from 'react'
 
+import { MenuContext } from '../../pages/index'
 import drawerStyles from '../Drawer/Drawer.module.css'
 import Input from '../Input/Input'
 import styles from './Header.module.css'
 
 export default function Header() {
+  const { isDrawerOpen, setIsDrawerOpen } = useContext(MenuContext)
+
   const handleMenuClick = () => {
-    console.log('HEADER')
-    const hamburgerMenu = document.getElementById('hamburgerMenu')
-
     const drawer = document.getElementById('drawer')
-
+    setIsDrawerOpen((isDrawerOpen) => !isDrawerOpen)
     if (drawer) {
-      drawer.classList.add(drawerStyles.open)
-    } else {
-      drawer.classList.remove(drawerStyles.open)
+      if (!isDrawerOpen) {
+        drawer.classList.add(drawerStyles.open)
+      } else {
+        drawer.classList.remove(drawerStyles.open)
+      }
     }
   }
   return (
