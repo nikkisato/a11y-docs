@@ -1,4 +1,4 @@
-export default function MenuBar({ ...props }) {
+export default function MenuBar({ children, ...props }) {
   const listProps = {
     ...props,
     // 'aria-orientation': 'horizontal',
@@ -6,5 +6,5 @@ export default function MenuBar({ ...props }) {
     role: 'menubar',
   }
 
-  return <ul {...listProps}></ul>
+  return <ul {...listProps}>{children}</ul>
 }

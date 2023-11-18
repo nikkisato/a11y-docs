@@ -1,5 +1,5 @@
 import React from 'react'
-export default function MenuItem({ ...props }) {
+export default function MenuItem({ children, ...props }) {
   const listItemProps = {
     ...props,
     'data-menubar-listitem': '',
@@ -11,5 +11,5 @@ export default function MenuItem({ ...props }) {
     role: 'menuitem',
   }
 
-  return <li {...listItemProps}></li>
+  return <li {...listItemProps}>{React.cloneElement(children, childProps)}</li>
 }
