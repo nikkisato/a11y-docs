@@ -6,23 +6,20 @@ import { MenuBar } from '../MenuBar'
 import { MenuItem } from '../MenuItem'
 import styles from './Menu.module.css'
 
-export default function Menu({ children }: { children: React.ReactNode }) {
-  const { isDrawerOpen, setIsDrawerOpen } = useContext(MenuContext)
+export default function Menu() {
+  // const codes = useContext(MenuContext)
 
+  // console.log('codes', codes)
   return (
     <nav aria-label="Primary Navigation" className={styles.nav}>
       <MenuBar aria-label="Primary Navigation">
-        <MenuItem>
-          <a href="/#about">About</a>
-        </MenuItem>
-
-        <MenuItem>
-          <a href="/#admissions">Admissions</a>
-        </MenuItem>
-
-        <MenuItem>
-          <a href="/#academics">Academics</a>
-        </MenuItem>
+        {/* {codes.map((code) => {
+          return (
+            <MenuItem key={code._id}>
+              <a href={`/${code.slug.current}`}>{code.title}</a>
+            </MenuItem>
+          )
+        })} */}
       </MenuBar>
     </nav>
   )

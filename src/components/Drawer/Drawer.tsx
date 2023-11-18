@@ -65,7 +65,7 @@ export default function Drawer({
           onClick={handleMenuClose}
         />
       )}
-      {/* <Menu children={children} /> */}
+      <Menu />
     </div>
   )
 }

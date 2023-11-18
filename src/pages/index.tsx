@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { useLiveQuery } from 'next-sanity/preview'
+// import { useLiveQuery } from 'next-sanity/preview'
 import { createContext, useContext, useState } from 'react'
 
 import Container from '~/components/Container/Container'
@@ -13,7 +13,6 @@ export const MenuContext = createContext()
 
 const useDrawerState = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  console.log('isDrawerOpen', isDrawerOpen)
   return { isDrawerOpen, setIsDrawerOpen }
 }
 
@@ -32,20 +31,28 @@ export const getStaticProps: GetStaticProps<
   }
 }
 
-export default function IndexPage(
+export default async function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
   const { isDrawerOpen, setIsDrawerOpen } = useDrawerState()
-  const [codes] = useLiveQuery<Code[]>(props.codes, codeQuery)
+  // const codes = props.codes
+
+  // let titleArray = []
+
+  // codes.forEach((code) => {
+  //   titleArray.push(code.title)
+  // })
 
   return (
     <MenuContext.Provider
       value={{
         isDrawerOpen,
         setIsDrawerOpen,
+        // codes,
+        // titleArray,
       }}
     >
-      <Container></Container>
+      <Container>{children}</Container>
     </MenuContext.Provider>
   )
 }
