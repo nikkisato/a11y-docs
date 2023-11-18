@@ -18,14 +18,11 @@ interface Query {
 }
 
 export const getStaticProps: GetStaticProps<
-  SharedPageProps & {
-    code: Code
-  },
+  SharedPageProps & { code: Code },
   Query
 > = async ({ draftMode = false, params = {} }) => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const code = await getCode(client, params.slug)
-
   if (!code) {
     return {
       notFound: true,
@@ -50,7 +47,7 @@ export default function ProjectSlugRoute(
 
   return (
     <Container>
-      {/* <div>{code.title}</div> */}
+      <div>{code.title}</div>
       <CodeContainer code={code} />
     </Container>
   )

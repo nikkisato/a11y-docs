@@ -37,12 +37,12 @@ export default function IndexPage(
 ) {
   const { isDrawerOpen, setIsDrawerOpen } = useDrawerState()
   const [codes] = useLiveQuery<Code[]>(props.codes, codeQuery)
-
   return (
     <MenuContext.Provider
       value={{
         isDrawerOpen,
         setIsDrawerOpen,
+        codes,
       }}
     >
       <Container></Container>
