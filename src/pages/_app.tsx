@@ -7,9 +7,13 @@ import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
 import { lazy } from 'react'
 
+import { type Code } from '~/lib/sanity.queries'
+
 export interface SharedPageProps {
   draftMode: boolean
   token: string
+  codes: Code[]
+  children: React.ReactNode
 }
 
 const PreviewProvider = lazy(() => import('~/components/PreviewProvider'))

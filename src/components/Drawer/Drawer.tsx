@@ -2,7 +2,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
 import { useContext } from 'react'
 
-import { MenuContext } from '../../pages/index'
+import { MenuContext } from '../../context/ContextMenu'
 import Menu from '../Menu/Menu'
 import styles from './Drawer.module.css'
 

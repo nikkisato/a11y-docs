@@ -44,10 +44,10 @@ export default function ProjectSlugRoute(
   const [code] = useLiveQuery(props.code, codeBySlugQuery, {
     slug: props.code.slug,
   })
-
+  console.log('codeSingle', code)
   return (
     <Container>
-      <div>{code.title}</div>
+      {/* <div>{code.title}</div> */}
       <CodeContainer code={code} />
     </Container>
   )
