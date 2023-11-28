@@ -12,3 +12,5 @@ const IndexPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     </MenuProvider>
   )
 }
+
+export default IndexPage
