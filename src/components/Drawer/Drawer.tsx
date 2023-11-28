@@ -55,7 +55,7 @@ export default function Drawer({
   return (
     <div id="drawer" className={classNames(styles.drawer, drawerClass)}>
       {closeButton && (
-        <CloseIcon
+        <button
           id="closeDrawerButton"
           className={classNames(
             'icon',
@@ -63,7 +63,9 @@ export default function Drawer({
             closeDrawerClass,
           )}
           onClick={handleMenuClose}
-        />
+        >
+          <CloseIcon />
+        </button>
       )}
       <Menu />
     </div>
