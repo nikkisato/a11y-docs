@@ -64,6 +64,7 @@ export const getStaticProps: GetStaticProps<
     },
   }
 }
+
 export const MenuProvider: React.FC<SharedPageProps> = ({ children }) => {
   const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
   const { codes, setCodes } = useCode()
@@ -78,5 +79,3 @@ export const MenuProvider: React.FC<SharedPageProps> = ({ children }) => {
     <MenuContext.Provider value={contextValue}>{children}</MenuContext.Provider>
   )
 }
-
-// export { MenuProvider, useCode, useDrawer, useMenu }
