@@ -35,27 +35,27 @@ export const getStaticProps: GetStaticProps<
   }
 }
 
-// export default function ProjectSlugRoute(
-//   props: InferGetStaticPropsType<typeof getStaticProps>,
-// ) {
-//   const [code] = useLiveQuery(props.code, codeBySlugQuery, {
-//     slug: props.code.slug,
-//   })
-//   console.log('codeSingle', code)
-//   return (
-//     <Container>
-//       <CodeContainer code={code} />
-//     </Container>
-//   )
-// }
+export default function ProjectSlugRoute(
+  props: InferGetStaticPropsType<typeof getStaticProps>,
+) {
+  const [code] = useLiveQuery(props.codes, codeBySlugQuery, {
+    slug: props.codes.slug,
+  })
+  console.log('codeSingle', code)
+  return (
+    <Container>
+      <CodeContainer code={code} />
+    </Container>
+  )
+}
 
-// export const getStaticPaths = async () => {
-//   const client = getClient()
+export const getStaticPaths = async () => {
+  const client = getClient()
 
-//   const slugs = await client.fetch(codeQuery)
+  const slugs = await client.fetch(codeQuery)
 
-//   return {
-//     paths: slugs?.map(({ slug }) => `/code/${slug}`) || [],
-//     fallback: 'blocking',
-//   }
-// }
+  return {
+    paths: slugs?.map(({ slug }) => `/code/${slug}`) || [],
+    fallback: 'blocking',
+  }
+}
