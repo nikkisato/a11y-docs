@@ -7,7 +7,7 @@ import { getStaticProps, MenuProvider } from '../context/ContextMenu'
 const IndexPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { codes } = props
   return (
-    <MenuProvider codes={codes}>
+    <MenuProvider draftMode token="true" codes={codes}>
       <Container />
     </MenuProvider>
   )

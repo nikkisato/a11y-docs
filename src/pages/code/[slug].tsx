@@ -1,8 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
 
 import CodeContainer from '~/components/CodeContainer/CodeContainer'
 import Container from '~/components/Container/Container'
+import { useCodes } from '~/context/ContextMenu'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import {
@@ -18,48 +21,41 @@ interface Query {
 }
 
 export const getStaticProps: GetStaticProps<
-  SharedPageProps & { code: Code },
-  Query
-> = async ({ draftMode = false, params = {} }) => {
-  const client = getClient(draftMode ? { token: readToken } : undefined)
-  const code = await getCode(client, params.slug)
-  if (!code) {
-    return {
-      notFound: true,
-    }
-  }
-
+  SharedPageProps & { codes: Code[] }
+> = async ({ draftMode = false }: { draftMode?: boolean }) => {
+  const codes = await useCodes(draftMode)
+  const children = ''
   return {
     props: {
       draftMode,
       token: draftMode ? readToken : '',
-      code,
+      codes,
+      children,
     },
   }
 }
 
-export default function ProjectSlugRoute(
-  props: InferGetStaticPropsType<typeof getStaticProps>,
-) {
-  const [code] = useLiveQuery(props.code, codeBySlugQuery, {
-    slug: props.code.slug,
-  })
-  console.log('codeSingle', code)
-  return (
-    <Container>
-      {/* <div>{code.title}</div> */}
-      <CodeContainer code={code} />
-    </Container>
-  )
-}
+// export default function ProjectSlugRoute(
+//   props: InferGetStaticPropsType<typeof getStaticProps>,
+// ) {
+//   const [code] = useLiveQuery(props.code, codeBySlugQuery, {
+//     slug: props.code.slug,
+//   })
+//   console.log('codeSingle', code)
+//   return (
+//     <Container>
+//       <CodeContainer code={code} />
+//     </Container>
+//   )
+// }
 
-export const getStaticPaths = async () => {
-  const client = getClient()
+// export const getStaticPaths = async () => {
+//   const client = getClient()
 
-  const slugs = await client.fetch(codeQuery)
+//   const slugs = await client.fetch(codeQuery)
 
-  return {
-    paths: slugs?.map(({ slug }) => `/code/${slug}`) || [],
-    fallback: 'blocking',
-  }
-}
+//   return {
+//     paths: slugs?.map(({ slug }) => `/code/${slug}`) || [],
+//     fallback: 'blocking',
+//   }
+// }
