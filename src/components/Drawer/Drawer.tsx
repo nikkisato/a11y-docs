@@ -1,8 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
-import { useContext } from 'react'
 
-import { MenuContext } from '../../context/ContextMenu'
+import { useMenu } from '../../context/ContextMenu'
 import Menu from '../Menu/Menu'
 import styles from './Drawer.module.css'
 
@@ -21,7 +20,7 @@ export default function Drawer({
   right,
   closeButton,
 }: DrawerProps) {
-  const { isDrawerOpen, setIsDrawerOpen } = useContext(MenuContext)
+  const { isDrawerOpen, setIsDrawerOpen } = useMenu()
 
   const handleMenuClose = () => {
     const drawer = document.getElementById('drawer')
