@@ -17,6 +17,7 @@ export const MenuContext = createContext<MenuContextType | undefined>(undefined)
 
 export const useMenu = () => {
   const context = useContext(MenuContext)
+  console.log('context', context)
   if (!context) {
     throw new Error('useMenu must be used within a MenuContextProvider')
   }
