@@ -5,7 +5,7 @@ import Heading from '../Heading/Heading'
 import styles from './CodeContainer.module.css'
 
 export default function CodeContainer({ code }) {
-  const { isDrawerOpen, setIsDrawerOpen } = useMenu()
+  console.log('codeContainer', code)
   return (
     <div className={styles.codeContainer}>
       <Heading headingType="h3" text={code.title} />

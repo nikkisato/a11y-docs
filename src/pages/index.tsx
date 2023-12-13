@@ -5,8 +5,8 @@ import Container from '~/components/Container/Container'
 import { getStaticProps, MenuProvider } from '../context/ContextMenu'
 
 const IndexPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { codes } = props
-  return <Container />
+  const { codes, children } = props
+  return <Container>{children}</Container>
 }
 
 export default IndexPage

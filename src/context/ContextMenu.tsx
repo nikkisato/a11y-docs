@@ -17,7 +17,6 @@ export const MenuContext = createContext<MenuContextType | undefined>(undefined)
 
 export const useMenu = () => {
   const context = useContext(MenuContext)
-  console.log('context', context)
   if (!context) {
     throw new Error('useMenu must be used within a MenuContextProvider')
   }
@@ -55,7 +54,9 @@ export const getStaticProps: GetStaticProps<
   SharedPageProps & { codes: Code[] }
 > = async ({ draftMode = false }: { draftMode?: boolean }) => {
   const codes = await useCodes(draftMode)
-  const children = ''
+  const children = []
+
+  console.log('children', children)
   return {
     props: {
       draftMode,
@@ -69,6 +70,8 @@ export const getStaticProps: GetStaticProps<
 export const MenuProvider: React.FC<SharedPageProps> = ({ children }) => {
   const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
   const { codes, setCodes } = useCode()
+
+  console.log('children', children)
 
   const contextValue = {
     isDrawerOpen,
