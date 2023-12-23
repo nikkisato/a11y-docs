@@ -32,6 +32,7 @@ export const useDrawer = () => {
 export const useCodes = async (draftMode: boolean): Promise<Code[]> => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const codes = await getCodes(client)
+
   return codes
 }
 
@@ -56,7 +57,6 @@ export const getStaticProps: GetStaticProps<
   const codes = await useCodes(draftMode)
   const children = []
 
-  console.log('children', children)
   return {
     props: {
       draftMode,
@@ -71,7 +71,7 @@ export const MenuProvider: React.FC<SharedPageProps> = ({ children }) => {
   const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
   const { codes, setCodes } = useCode()
 
-  console.log('children', children)
+  console.log('codes3', codes)
 
   const contextValue = {
     isDrawerOpen,
