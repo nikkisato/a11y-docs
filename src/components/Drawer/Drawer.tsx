@@ -55,6 +55,7 @@ export default function Drawer({
     <div id="drawer" className={classNames(styles.drawer, drawerClass)}>
       {closeButton && (
         <button
+          aria-label="Close Drawer"
           id="closeDrawerButton"
           className={classNames(
             'icon',
