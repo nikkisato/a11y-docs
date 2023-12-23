@@ -4,11 +4,11 @@ export default function AboutPage() {
       <div>
         <h1>About Me</h1>
         <p>
-          Hello there! I'm Nikki, a passionate developer dedicated to crafting
-          digital experiences that are not only functional but accessible to
-          everyone. With a keen eye for detail and a love for coding, I
-          specialize in creating web applications that prioritize inclusivity
-          and user-friendly design.
+          Hello there! I&apos;m Nikki, a passionate developer dedicated to
+          crafting digital experiences that are not only functional but
+          accessible to everyone. With a keen eye for detail and a love for
+          coding, I specialize in creating web applications that prioritize
+          inclusivity and user-friendly design.
         </p>
       </div>
 
@@ -32,11 +32,11 @@ export default function AboutPage() {
             it all.
           </li>
           <li>
-            Passion for Accessibility: Accessibility isn't just a checkbox for
-            me; it's a commitment. I go beyond standards, ensuring that every
-            line of code contributes to an inclusive digital space. A website
-            should be a welcoming place for everyone, and that's what I strive
-            to achieve.
+            Passion for Accessibility: Accessibility isn&apos;t just a checkbox
+            for me; it&apos;s a commitment. I go beyond standards, ensuring that
+            every line of code contributes to an inclusive digital space. A
+            website should be a welcoming place for everyone, and that&apos;s
+            what I strive to achieve.
           </li>
         </ul>
       </div>
@@ -73,14 +73,14 @@ export default function AboutPage() {
         </ul>
       </div>
       <div>
-        <h1>Let's Connect</h1>
+        <h1>Let&apos;s Connect</h1>
         <p>
-          I'm always excited to embark on new projects and collaborations. If
-          you're looking for a developer who not only codes but cares about
-          creating an inclusive digital landscape, let's connect. Feel free to
-          reach out through [contact form/email] or connect with me on
-          [LinkedIn/GitHub]. Together, we can build something amazing. Let's
-          code for a more inclusive digital future!
+          I&apos;m always excited to embark on new projects and collaborations.
+          If you&apos;re looking for a developer who not only codes but cares
+          about creating an inclusive digital landscape, let&apos;s connect.
+          Feel free to reach out through [contact form/email] or connect with me
+          on [LinkedIn/GitHub]. Together, we can build something amazing.
+          Let&apos;s code for a more inclusive digital future!
         </p>
       </div>
     </>
