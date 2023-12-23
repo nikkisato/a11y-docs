@@ -1,8 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
-import { useContext } from 'react'
 
-import { MenuContext } from '../../pages/index'
+import { useMenu } from '../../context/ContextMenu'
 import Menu from '../Menu/Menu'
 import styles from './Drawer.module.css'
 
@@ -21,7 +20,7 @@ export default function Drawer({
   right,
   closeButton,
 }: DrawerProps) {
-  const { isDrawerOpen, setIsDrawerOpen } = useContext(MenuContext)
+  const { isDrawerOpen, setIsDrawerOpen } = useMenu()
 
   const handleMenuClose = () => {
     const drawer = document.getElementById('drawer')
@@ -55,7 +54,8 @@ export default function Drawer({
   return (
     <div id="drawer" className={classNames(styles.drawer, drawerClass)}>
       {closeButton && (
-        <CloseIcon
+        <button
+          aria-label="Close Drawer"
           id="closeDrawerButton"
           className={classNames(
             'icon',
@@ -63,9 +63,11 @@ export default function Drawer({
             closeDrawerClass,
           )}
           onClick={handleMenuClose}
-        />
+        >
+          <CloseIcon />
+        </button>
       )}
-      {/* <Menu children={children} /> */}
+      <Menu />
     </div>
   )
 }

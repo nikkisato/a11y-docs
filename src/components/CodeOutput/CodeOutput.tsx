@@ -4,51 +4,51 @@ import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import Heading from '../Heading/Heading'
 
 export default function CodeOutput({ code }) {
-  const { css, html, javascript, typescript, liquid } = code
+  console.log('codeOutput', code)
 
   return (
     <>
-      {css && (
+      {code?.css && (
         <>
           <Heading headingType="h4" text="CSS" />
           <SyntaxHighlighter language="css" style={dracula}>
-            {css.code}
+            {code.css.code}
           </SyntaxHighlighter>
         </>
       )}
 
-      {html && (
+      {code?.html && (
         <>
           <Heading headingType="h4" text="HTML" />
           <SyntaxHighlighter language="html" style={dracula}>
-            {html.code}
+            {code.html.code}
           </SyntaxHighlighter>
         </>
       )}
 
-      {javascript && (
+      {code?.javascript && (
         <>
           <Heading headingType="h4" text="JavaScript" />
           <SyntaxHighlighter language="javascript" style={dracula}>
-            {javascript}
+            {code.javascript}
           </SyntaxHighlighter>
         </>
       )}
 
-      {typescript && (
+      {code?.typescript && (
         <>
           <Heading headingType="h4" text="TypeScript" />
           <SyntaxHighlighter language="typescript" style={dracula}>
-            {typescript}
+            {code.typescript}
           </SyntaxHighlighter>
         </>
       )}
 
-      {liquid && (
+      {code?.liquid && (
         <>
           <Heading headingType="h4" text="Liquid" />
           <SyntaxHighlighter language="liquid" style={dracula}>
-            {liquid}
+            {code.liquid}
           </SyntaxHighlighter>
         </>
       )}

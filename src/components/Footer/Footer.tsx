@@ -17,6 +17,10 @@ export default function Footer() {
             <TwitterIcon className="icon" />
           </Link>
         </div>
+
+        <div className={styles.footerDev}>
+          <a href="#">About the Dev</a>
+        </div>
         <div className={styles.footerStatement}>
           <a href="#">Accessibility Statement </a>
         </div>

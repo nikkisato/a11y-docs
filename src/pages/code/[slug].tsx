@@ -1,68 +1,39 @@
-import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { useLiveQuery } from 'next-sanity/preview'
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useRouter } from 'next/router'
 
 import CodeContainer from '~/components/CodeContainer/CodeContainer'
 import Container from '~/components/Container/Container'
-import { readToken } from '~/lib/sanity.api'
-import { getClient } from '~/lib/sanity.client'
-import {
-  type Code,
-  codeBySlugQuery,
-  codeQuery,
-  getCode,
-} from '~/lib/sanity.queries'
-import type { SharedPageProps } from '~/pages/_app'
+import { MenuContext } from '~/context/ContextMenu'
 
-interface Query {
-  [key: string]: string
-}
-
-export const getStaticProps: GetStaticProps<
-  SharedPageProps & {
-    code: Code
-  },
-  Query
-> = async ({ draftMode = false, params = {} }) => {
-  const client = getClient(draftMode ? { token: readToken } : undefined)
-  const code = await getCode(client, params.slug)
-
-  if (!code) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return {
-    props: {
-      draftMode,
-      token: draftMode ? readToken : '',
-      code,
-    },
-  }
-}
-
-export default function ProjectSlugRoute(
-  props: InferGetStaticPropsType<typeof getStaticProps>,
-) {
-  const [code] = useLiveQuery(props.code, codeBySlugQuery, {
-    slug: props.code.slug,
-  })
-
+export default function CodePage() {
+  const router = useRouter()
+  const { slug } = router.query
   return (
-    <Container>
-      {/* <div>{code.title}</div> */}
-      <CodeContainer code={code} />
-    </Container>
+    <MenuContext.Consumer>
+      {(context) => {
+        const { codes } = context || {}
+
+        const code = codes.filter((code) => {
+          if (code.slug.current === slug) {
+            console.log('code', code)
+
+            return code
+          }
+          // else {
+          //   const newSlug = code.slug.current.replace(/-/g, ' ')
+          //   console.log('newSlug', newSlug)
+          //   if (newSlug === slug) {
+          //     return code
+          //   }
+          // }
+        })
+
+        return (
+          <Container>
+            <CodeContainer code={code} />
+          </Container>
+        )
+      }}
+    </MenuContext.Consumer>
   )
-}
-
-export const getStaticPaths = async () => {
-  const client = getClient()
-
-  const slugs = await client.fetch(codeQuery)
-
-  return {
-    paths: slugs?.map(({ slug }) => `/code/${slug}`) || [],
-    fallback: 'blocking',
-  }
 }
