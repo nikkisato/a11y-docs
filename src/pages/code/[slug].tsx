@@ -14,7 +14,14 @@ export default function CodePage() {
         const { codes } = context || {}
 
         const code = codes.filter((code) => {
-          return code.slug.current === slug
+          if (code.slug.current === slug) {
+            return code
+          } else {
+            const newSlug = code.slug.current.replace(/-/g, ' ')
+            if (newSlug === slug) {
+              return code
+            }
+          }
         })
 
         return (
