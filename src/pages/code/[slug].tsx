@@ -15,13 +15,16 @@ export default function CodePage() {
 
         const code = codes.filter((code) => {
           if (code.slug.current === slug) {
+            console.log('code', code)
             return code
-          } else {
-            const newSlug = code.slug.current.replace(/-/g, ' ')
-            if (newSlug === slug) {
-              return code
-            }
           }
+          // else {
+          //   const newSlug = code.slug.current.replace(/-/g, ' ')
+          //   console.log('newSlug', newSlug)
+          //   if (newSlug === slug) {
+          //     return code
+          //   }
+          // }
         })
 
         return (

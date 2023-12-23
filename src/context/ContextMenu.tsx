@@ -71,8 +71,6 @@ export const MenuProvider: React.FC<SharedPageProps> = ({ children }) => {
   const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
   const { codes, setCodes } = useCode()
 
-  console.log('codes3', codes)
-
   const contextValue = {
     isDrawerOpen,
     setIsDrawerOpen,
