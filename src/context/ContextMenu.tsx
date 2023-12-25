@@ -32,7 +32,6 @@ export const useDrawer = () => {
 export const useCodes = async (draftMode: boolean): Promise<Code[]> => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const codes = await getCodes(client)
-  console.log('useCodes', codes)
 
   return codes
 }
