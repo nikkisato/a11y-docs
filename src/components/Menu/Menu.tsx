@@ -1,13 +1,11 @@
-import { useCode } from '~/context/ContextMenu'
+import { useMenu } from '~/context/ContextMenu'
 
 import { MenuBar } from '../MenuBar'
 import { MenuItem } from '../MenuItem'
 import styles from './Menu.module.css'
 
 export default function Menu() {
-  const { codes } = useCode()
-
-  console.log('codesMENU', codes)
+  const { codes } = useMenu()
 
   return (
     <nav aria-label="Primary Navigation" className={styles.nav}>
