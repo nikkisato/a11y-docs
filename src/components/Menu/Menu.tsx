@@ -1,11 +1,11 @@
-import { useMenu } from '~/context/ContextMenu'
+import { useCode } from '~/context/ContextMenu'
 
 import { MenuBar } from '../MenuBar'
 import { MenuItem } from '../MenuItem'
 import styles from './Menu.module.css'
 
 export default function Menu() {
-  const { codes } = useMenu()
+  const { codes } = useCode()
 
   console.log('codesMENU', codes)
 
