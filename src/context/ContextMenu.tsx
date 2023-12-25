@@ -17,7 +17,6 @@ export const MenuContext = createContext<MenuContextType | undefined>(undefined)
 
 export const useMenu = () => {
   const context = useContext(MenuContext)
-  console.log('context', context)
   if (!context) {
     throw new Error('useMenu must be used within a MenuContextProvider')
   }
@@ -33,6 +32,7 @@ export const useDrawer = () => {
 export const useCodes = async (draftMode: boolean): Promise<Code[]> => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const codes = await getCodes(client)
+  console.log('useCodes', codes)
 
   return codes
 }
