@@ -8,9 +8,11 @@ import { type Code, getCodes } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 
 interface MenuContextType {
-  isDrawerOpen: boolean
-  setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>
+  isMenuDrawerOpen: boolean
+  setIsMenuDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>
   codes: Code[]
+  isSettingDrawerOpen: boolean
+  setIsSettingDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const MenuContext = createContext<MenuContextType | undefined>(undefined)
@@ -27,6 +29,18 @@ export const useDrawer = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   return { isDrawerOpen, setIsDrawerOpen }
+}
+
+export const useMenuDrawer = () => {
+  const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false)
+
+  return { isMenuDrawerOpen, setIsMenuDrawerOpen }
+}
+
+export const useSettingDrawer = () => {
+  const [isSettingDrawerOpen, setIsSettingDrawerOpen] = useState(false)
+
+  return { isSettingDrawerOpen, setIsSettingDrawerOpen }
 }
 
 export const useCodes = async (draftMode: boolean): Promise<Code[]> => {
@@ -68,13 +82,16 @@ export const getStaticProps: GetStaticProps<
 }
 
 export const MenuProvider: React.FC<SharedPageProps> = ({ children }) => {
-  const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
+  const { isMenuDrawerOpen, setIsMenuDrawerOpen } = useMenuDrawer()
+  const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
   const { codes, setCodes } = useCode()
 
   const contextValue = {
-    isDrawerOpen,
-    setIsDrawerOpen,
+    isMenuDrawerOpen,
+    setIsMenuDrawerOpen,
     codes,
+    isSettingDrawerOpen,
+    setIsSettingDrawerOpen,
   }
 
   return (

@@ -2,9 +2,9 @@ import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
 import FocusTrap from 'focus-trap-react'
 
-import { useDrawer } from '../../context/ContextMenu'
+import { useMenuDrawer } from '../../context/ContextMenu'
 import Menu from '../Menu/Menu'
-import styles from './Drawer.module.css'
+import styles from './MenuDrawer.module.css'
 
 interface DrawerProps {
   top?: boolean
@@ -15,7 +15,7 @@ interface DrawerProps {
   id: string
 }
 
-export default function Drawer({
+export default function MenuDrawer({
   top,
   bottom,
   left,
@@ -23,12 +23,12 @@ export default function Drawer({
   closeButton,
   id,
 }: DrawerProps) {
-  const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
+  const { isMenuDrawerOpen, setIsMenuDrawerOpen } = useMenuDrawer()
 
-  const handleClose = () => {
+  const handleMenuClose = () => {
     const drawer = document.getElementById('drawer')
 
-    setIsDrawerOpen((isDrawerOpen) => !isDrawerOpen)
+    setIsMenuDrawerOpen((isMenuDrawerOpen) => !isMenuDrawerOpen)
     if (drawer.classList.contains(styles.open)) {
       drawer.classList.remove(styles.open)
     }
@@ -55,7 +55,7 @@ export default function Drawer({
     : styles.closeLeft
 
   return (
-    <FocusTrap active={isDrawerOpen}>
+    <FocusTrap active={isMenuDrawerOpen}>
       <div id={id} className={classNames(styles.drawer, drawerClass)}>
         {closeButton && (
           <button
@@ -63,10 +63,10 @@ export default function Drawer({
             id="closeDrawerButton"
             className={classNames(
               'icon',
-              isDrawerOpen ? styles.open : '',
+              isMenuDrawerOpen ? styles.open : '',
               closeDrawerClass,
             )}
-            onClick={handleClose}
+            onClick={handleMenuClose}
           >
             <CloseIcon />
           </button>
