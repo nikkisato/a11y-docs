@@ -7,6 +7,8 @@ import styles from './Menu.module.css'
 export default function Menu() {
   const { codes } = useMenu()
 
+  console.log('codesMENU', codes)
+
   return (
     <nav aria-label="Primary Navigation" className={styles.nav}>
       <MenuBar aria-label="Primary Navigation">
