@@ -26,9 +26,7 @@ export default function SettingsDrawer({
   const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
 
   const handleSettingClose = () => {
-    const drawer = document.getElementById('settings')
-
-    console.log('handleSettingClose')
+    const drawer = document.getElementById('menuSettings')
 
     setIsSettingDrawerOpen((isSettingDrawerOpen) => !isSettingDrawerOpen)
     if (drawer.classList.contains(styles.open)) {

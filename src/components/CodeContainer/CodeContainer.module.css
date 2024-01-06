@@ -1,0 +1,24 @@
+.codeContainer {
+    width: 100%;
+}
+
+.codeContainer h3 {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  padding: 1em;
+  margin: 0;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}

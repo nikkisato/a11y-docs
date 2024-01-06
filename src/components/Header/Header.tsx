@@ -12,24 +12,29 @@ export default function Header() {
   const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
 
   const handleMenuClick = () => {
-    const drawer = document.getElementById('drawer')
+    const drawer = document.getElementById('menuDrawer')
     setIsMenuDrawerOpen((isMenuDrawerOpen) => !isMenuDrawerOpen)
     if (drawer) {
       if (!isMenuDrawerOpen) {
+        console.log('drawerStyles', drawerStyles)
         drawer.classList.add(drawerStyles.open)
+        drawer.classList.add(drawerStyles.left)
       } else {
         drawer.classList.remove(drawerStyles.open)
+        drawer.classList.remove(drawerStyles.left)
       }
     }
   }
   const handleSettingClick = () => {
-    const drawer = document.getElementById('settings')
+    const drawer = document.getElementById('menuSettings')
     setIsSettingDrawerOpen((isSettingDrawerOpen) => !isSettingDrawerOpen)
     if (drawer) {
       if (!isSettingDrawerOpen) {
         drawer.classList.add(drawerStyles.open)
+        drawer.classList.add(drawerStyles.right)
       } else {
         drawer.classList.remove(drawerStyles.open)
+        drawer.classList.remove(drawerStyles.right)
       }
     }
   }

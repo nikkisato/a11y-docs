@@ -4,12 +4,21 @@ import Heading from '../Heading/Heading'
 import styles from './CodeContainer.module.css'
 
 export default function CodeContainer({ code }) {
-  console.log('code', code)
   const singleCode = code[0]
   console.log('singleCode', singleCode)
+  // console.log('singleCode', singleCode?.content[0].children[0].text)
+
   return (
     <div className={styles.codeContainer}>
       <Heading headingType="h3" text={singleCode?.title} />
+      {/* {singleCode?.content[0].children[0].text && (
+        <div className={styles.content}>
+          {singleCode?.content[0].children[0].text}
+        </div>
+      )} */}
+      {/* {singleCode?.image && (
+        <img src={singleCode?.image?.asset?.url} alt={singleCode?.title} />
+      )} */}
       <CodeCard code={singleCode} />
     </div>
   )

@@ -25,13 +25,21 @@ export default function MenuDrawer({
 }: DrawerProps) {
   const { isMenuDrawerOpen, setIsMenuDrawerOpen } = useMenuDrawer()
 
-  const handleMenuClose = () => {
-    const drawer = document.getElementById('drawer')
+  // const handleMenuClose = () => {
+  //   const drawer = document.getElementById('menuDrawer')
 
+  //   console.log('Menudrawer', drawer.classList)
+  //   setIsMenuDrawerOpen((isMenuDrawerOpen) => !isMenuDrawerOpen)
+
+  //   console.log('isMenuDrawerOpen', isMenuDrawerOpen)
+  //   if (drawer.classList.contains(styles.open)) {
+
+  //     drawer.classList.remove(styles.open)
+  //   }
+  // }
+
+  const handleMenuClose = () => {
     setIsMenuDrawerOpen((isMenuDrawerOpen) => !isMenuDrawerOpen)
-    if (drawer.classList.contains(styles.open)) {
-      drawer.classList.remove(styles.open)
-    }
   }
 
   const drawerClass = top
