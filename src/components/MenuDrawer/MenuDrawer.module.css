@@ -1,66 +1,22 @@
-.drawer {
-    background-color: #fff;
-    transition: transform 0.3s ease-out;
-    position: fixed;
-    z-index: 100;
+.menuDrawer {
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  width: 300px;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  transition: transform 0.3s ease-out;
+  transform: translateX(-100%);
 }
 
-.right {
-    width: 240px;
-    height: 100%;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-}
-
-.left {
-    width: 240px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-}
-
-.top {
-    width: 100%;
-    height: 240px;
-    top: 0;
-    margin-top: 10vh;
-    transform: translateY(-100%);
-}
-
-.bottom {
-    width: 100%;
-    height: 240px;
-    bottom: 0;
-    transform: translateY(100%);
-}
-
-.right.open, .left.open {
-    transform: translateX(0) !important;
-}
-
-.top.open, .bottom.open {
-    transform: translateY(0) !important;
-}
-
-
-.closeTop {
-    position:absolute;
-    right:0;
-}
-
-.closeRight {
-    position:absolute;
-    right:0;
+.open {
+  transform: translateX(0) !important;
 }
 
 .closeLeft {
-    position:absolute;
-    left:0;
-}
-
-.closeBottom {
-    position:absolute;
-    right:0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
 }

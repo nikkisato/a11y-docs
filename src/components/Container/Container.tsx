@@ -15,7 +15,7 @@ export default function Container({ children }) {
     <div className={styles.container}>
       <SkipLink />
       <Header />
-      <MenuDrawer closeButton={true} left={true} id="menuDrawer" />
+      <MenuDrawer id="menuDrawer" />
       {/* <SettingsDrawer closeButton={true} right={true} id="menuSettings" /> */}
       <main id="main" className={styles.main}>
         {children}

@@ -1,51 +1,56 @@
+import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
+import classNames from 'classnames'
 
 import { useMenuDrawer, useSettingDrawer } from '../../context/ContextMenu'
-import drawerStyles from '../Drawer/Drawer.module.css'
 import Input from '../Input/Input'
+import drawerStyles from '../MenuDrawer/MenuDrawer.module.css'
 import styles from './Header.module.css'
 
 export default function Header() {
   const { isMenuDrawerOpen, setIsMenuDrawerOpen } = useMenuDrawer()
   const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
+  console.log('isMenuDrawerOpen', isMenuDrawerOpen)
 
-  const handleMenuClick = () => {
-    const drawer = document.getElementById('menuDrawer')
-    setIsMenuDrawerOpen((isMenuDrawerOpen) => !isMenuDrawerOpen)
-    if (drawer) {
-      if (!isMenuDrawerOpen) {
-        console.log('drawerStyles', drawerStyles)
-        drawer.classList.add(drawerStyles.open)
-        drawer.classList.add(drawerStyles.left)
-      } else {
-        drawer.classList.remove(drawerStyles.open)
-        drawer.classList.remove(drawerStyles.left)
-      }
-    }
+  const handleMenuOpen = () => {
+    setIsMenuDrawerOpen(!isMenuDrawerOpen)
   }
-  const handleSettingClick = () => {
-    const drawer = document.getElementById('menuSettings')
-    setIsSettingDrawerOpen((isSettingDrawerOpen) => !isSettingDrawerOpen)
-    if (drawer) {
-      if (!isSettingDrawerOpen) {
-        drawer.classList.add(drawerStyles.open)
-        drawer.classList.add(drawerStyles.right)
-      } else {
-        drawer.classList.remove(drawerStyles.open)
-        drawer.classList.remove(drawerStyles.right)
-      }
-    }
+
+  const handleMenuClose = () => {
+    setIsMenuDrawerOpen(!isMenuDrawerOpen)
   }
+  // const handleSettingClick = () => {
+  //   const drawer = document.getElementById('menuSettings')
+  //   setIsSettingDrawerOpen((isSettingDrawerOpen) => !isSettingDrawerOpen)
+  //   if (drawer) {
+  //     if (!isSettingDrawerOpen) {
+  //       drawer.classList.add(drawerStyles.open)
+  //       drawer.classList.add(drawerStyles.right)
+  //     } else {
+  //       drawer.classList.remove(drawerStyles.open)
+  //       drawer.classList.remove(drawerStyles.right)
+  //     }
+  //   }
+  // }
 
   return (
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerLeft}>
-          <button onClick={handleMenuClick}>
-            <MenuIcon className="icon" id="hamburgerMenu" />
-          </button>
+          {isMenuDrawerOpen ? (
+            <button onClick={handleMenuClose} aria-label="Close Menu">
+              <CloseIcon className="icon" />
+            </button>
+          ) : (
+            <button onClick={handleMenuOpen} aria-label="Open Menu">
+              <MenuIcon
+                className={classNames('icon', drawerStyles.hamburgerMenu)}
+                id="hamburgerMenu"
+              />
+            </button>
+          )}
         </div>
         <div className={styles.headerMiddle}>
           <Input
@@ -58,9 +63,9 @@ export default function Header() {
           />
         </div>
         <div className={styles.headerRight}>
-          <button onClick={handleSettingClick}>
-            <SettingsIcon className="icon" />
-          </button>
+          {/* <button onClick={handleSettingClick}> */}
+          <SettingsIcon className="icon" />
+          {/* </button> */}
         </div>
       </header>
     </>
