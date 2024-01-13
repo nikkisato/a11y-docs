@@ -4,10 +4,10 @@
   z-index: 100;
   width: 300px;
   height: 100vh;
-  background-color: #333;
   color: #fff;
   transition: transform 0.3s ease-out;
   transform: translateX(-100%);
+  border: 2px solid black;
 }
 
 .open {

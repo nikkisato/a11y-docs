@@ -1,56 +1,34 @@
-import CloseIcon from '@mui/icons-material/Close'
+// Header.jsx
+import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
-import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
+import SearchIcon from '@mui/icons-material/Search'
 import classNames from 'classnames'
-
-import { useMenuDrawer, useSettingDrawer } from '../../context/ContextMenu'
 import Input from '../Input/Input'
-import drawerStyles from '../MenuDrawer/MenuDrawer.module.css'
+import MenuDrawer from '../MenuDrawer/MenuDrawer'
 import styles from './Header.module.css'
 
 export default function Header() {
-  const { isMenuDrawerOpen, setIsMenuDrawerOpen } = useMenuDrawer()
-  const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
-  console.log('isMenuDrawerOpen', isMenuDrawerOpen)
+  const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false)
 
   const handleMenuOpen = () => {
-    setIsMenuDrawerOpen(!isMenuDrawerOpen)
+    setIsMenuDrawerOpen(true)
   }
 
   const handleMenuClose = () => {
-    setIsMenuDrawerOpen(!isMenuDrawerOpen)
+    setIsMenuDrawerOpen(false)
   }
-  // const handleSettingClick = () => {
-  //   const drawer = document.getElementById('menuSettings')
-  //   setIsSettingDrawerOpen((isSettingDrawerOpen) => !isSettingDrawerOpen)
-  //   if (drawer) {
-  //     if (!isSettingDrawerOpen) {
-  //       drawer.classList.add(drawerStyles.open)
-  //       drawer.classList.add(drawerStyles.right)
-  //     } else {
-  //       drawer.classList.remove(drawerStyles.open)
-  //       drawer.classList.remove(drawerStyles.right)
-  //     }
-  //   }
-  // }
 
   return (
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerLeft}>
-          {isMenuDrawerOpen ? (
-            <button onClick={handleMenuClose} aria-label="Close Menu">
-              <CloseIcon className="icon" />
-            </button>
-          ) : (
-            <button onClick={handleMenuOpen} aria-label="Open Menu">
-              <MenuIcon
-                className={classNames('icon', drawerStyles.hamburgerMenu)}
-                id="hamburgerMenu"
-              />
-            </button>
-          )}
+          <button onClick={handleMenuOpen} aria-label="Open Menu">
+            <MenuIcon
+              className={classNames('icon', styles.hamburgerMenu)}
+              id="hamburgerMenu"
+            />
+          </button>
         </div>
         <div className={styles.headerMiddle}>
           <Input
@@ -63,11 +41,19 @@ export default function Header() {
           />
         </div>
         <div className={styles.headerRight}>
-          {/* <button onClick={handleSettingClick}> */}
-          <SettingsIcon className="icon" />
-          {/* </button> */}
+          {/* Conditionally render the SettingsIcon and pass the handleMenuClose callback */}
+          {isMenuDrawerOpen ? (
+            <SettingsIcon onClick={handleMenuClose} className="icon" />
+          ) : null}
         </div>
       </header>
+
+      {/* Conditionally render the MenuDrawer and pass the necessary props */}
+      <MenuDrawer
+        isOpen={isMenuDrawerOpen}
+        onClose={handleMenuClose}
+        id="menuDrawer"
+      />
     </>
   )
 }
