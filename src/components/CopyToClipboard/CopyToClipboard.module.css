@@ -1,0 +1,31 @@
+.copy {
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    height: 30px;
+}
+
+.copy span {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    /* height: 100%; */
+    margin: 5px;
+}
+
+.copied {
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    color: green;
+    height: 30px;
+    padding: 5px;
+}
+
+.copied span {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    margin: 5px;
+}

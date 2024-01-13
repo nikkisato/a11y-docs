@@ -2,17 +2,18 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
+import { codeInput } from '@sanity/code-input'
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
-import { codeInput } from '@sanity/code-input'
-
+import { lighthousePlugin } from 'sanity-lighthouse-plugin'
 import {
   defineUrlResolver,
   Iframe,
   IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
+import { media, mediaAssetSource } from 'sanity-plugin-media'
 
 // see https://www.sanity.io/docs/api-versioning for how versioning works
 import {
@@ -66,5 +67,17 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
+    media(),
+    lighthousePlugin(),
   ],
+  // This is for the media plugin
+  form: {
+    file: {
+      assetSources: (previousAssetSources) => {
+        return previousAssetSources.filter(
+          (assetSource) => assetSource !== mediaAssetSource,
+        )
+      },
+    },
+  },
 })

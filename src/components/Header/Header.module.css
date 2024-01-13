@@ -5,6 +5,7 @@
 	grid-column-gap: 20px;
 	grid-row-gap: 0px;
 	height: 10vh;
+	border-bottom: 2px solid #e6e6e6;
 }
 
 .headerLeft {

@@ -17,6 +17,12 @@ export default defineType({
       of: [{ type: 'block' }],
     }),
     defineField({
+      title: 'Image',
+      name: 'image',
+      type: 'image',
+    }),
+
+    defineField({
       type: 'code',
       name: 'css',
       title: 'CSS',

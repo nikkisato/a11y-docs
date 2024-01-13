@@ -1,0 +1,22 @@
+.menuDrawer {
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  width: 300px;
+  height: 100vh;
+  color: #fff;
+  transition: transform 0.3s ease-out;
+  transform: translateX(-100%);
+  border: 2px solid black;
+}
+
+.open {
+  transform: translateX(0) !important;
+}
+
+.closeLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
