@@ -7,10 +7,12 @@ import React, { ReactNode, useState } from 'react'
 
 import MenuDrawer from '../MenuDrawer/MenuDrawer'
 import SearchInput from '../SearchInput/SearchInput'
+import SettingDrawer from '../SettingsDrawer/SettingsDrawer'
 import styles from './Header.module.css'
 
 export default function Header() {
   const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false)
+  const [isSettingsDrawerOpen, setIsSettingsDrawerOpen] = useState(false)
 
   const handleMenuOpen = () => {
     setIsMenuDrawerOpen(true)
@@ -18,6 +20,14 @@ export default function Header() {
 
   const handleMenuClose = () => {
     setIsMenuDrawerOpen(false)
+  }
+
+  const handleSettingsOpen = () => {
+    setIsSettingsDrawerOpen(true)
+  }
+
+  const handleSettingsClose = () => {
+    setIsSettingsDrawerOpen(false)
   }
 
   return (
@@ -35,14 +45,18 @@ export default function Header() {
           <SearchInput icon={<SearchIcon />} />
         </div>
         <div className={styles.headerRight}>
-          {/* Conditionally render the SettingsIcon and pass the handleMenuClose callback */}
-          {isMenuDrawerOpen ? (
-            <SettingsIcon onClick={handleMenuClose} className="icon" />
-          ) : null}
+          <button onClick={handleSettingsOpen} aria-label="Open Settings Menu">
+            <SettingsIcon className={classNames('icon')} id="settingsMenu" />
+          </button>
         </div>
       </header>
 
-      {/* Conditionally render the MenuDrawer and pass the necessary props */}
+      <SettingDrawer
+        isOpen={isSettingsDrawerOpen}
+        id="menuSettings"
+        onClose={handleSettingsClose}
+      />
+
       <MenuDrawer
         isOpen={isMenuDrawerOpen}
         onClose={handleMenuClose}

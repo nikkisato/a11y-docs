@@ -49,7 +49,7 @@
 
 [] Accessible Password Fields
 
-[] Accessible Skip Links
+[x] Accessible Skip Links
 
 [] Accessible SVG
 

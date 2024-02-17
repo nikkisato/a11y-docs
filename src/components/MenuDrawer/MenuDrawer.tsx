@@ -1,8 +1,9 @@
 // MenuDrawer.jsx
-import React from 'react'
+import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
 import FocusTrap from 'focus-trap-react'
-import CloseIcon from '@mui/icons-material/Close'
+import React from 'react'
+
 import Menu from '../Menu/Menu'
 import styles from './MenuDrawer.module.css'
 

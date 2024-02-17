@@ -3,75 +3,42 @@ import classNames from 'classnames'
 import FocusTrap from 'focus-trap-react'
 
 import { useSettingDrawer } from '../../context/ContextMenu'
-import Menu from '../Menu/Menu'
+import SettingsMenu from '../SettingsMenu/SettingsMenu'
 import styles from './SettingsDrawer.module.css'
 
 interface DrawerProps {
-  top?: boolean
-  bottom?: boolean
-  left?: boolean
-  right?: boolean
-  closeButton?: boolean
+  isOpen: boolean
+  onClose: () => void
   id: string
 }
 
-export default function SettingsDrawer({
-  top,
-  bottom,
-  left,
-  right,
-  closeButton,
-  id,
-}: DrawerProps) {
-  const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
+export default function SettingsDrawer({ id, isOpen, onClose }: DrawerProps) {
+  // const { isSettingDrawerOpen, setIsSettingDrawerOpen } = useSettingDrawer()
 
-  const handleSettingClose = () => {
-    const drawer = document.getElementById('menuSettings')
-
-    setIsSettingDrawerOpen((isSettingDrawerOpen) => !isSettingDrawerOpen)
-    if (drawer.classList.contains(styles.open)) {
-      drawer.classList.remove(styles.open)
-    }
-  }
-
-  const drawerClass = top
-    ? styles.top
-    : bottom
-    ? styles.bottom
-    : left
-    ? styles.left
-    : right
-    ? styles.right
-    : styles.left
-
-  const closeDrawerClass = top
-    ? styles.closeTop
-    : bottom
-    ? styles.closeBottom
-    : left
-    ? styles.closeLeft
-    : right
-    ? styles.closeRight
-    : styles.closeLeft
+  const drawerClass = classNames({
+    [styles.open]: isOpen,
+    [styles.menuDrawer]: true,
+  })
 
   return (
-    <FocusTrap active={isSettingDrawerOpen}>
-      <div id={id} className={classNames(styles.drawer, drawerClass)}>
-        {closeButton && (
+    <FocusTrap active={isOpen}>
+      <div id={id} className={classNames(styles.settingsDrawer, drawerClass)}>
+        {isOpen && (
           <button
-            aria-label="Close Drawer"
-            id="closeDrawerButton"
-            className={classNames(
-              'icon',
-              isSettingDrawerOpen ? styles.open : '',
-              closeDrawerClass,
-            )}
-            onClick={handleSettingClose}
+            onClick={onClose}
+            aria-label="Close Menu"
+            className={styles.closeRight}
           >
-            <CloseIcon />
+            <CloseIcon className={classNames('icon')} />
           </button>
         )}
-        <Menu />
+
+        {isOpen && (
+          <div className={styles.drawerContent}>
+            {/* {isOpen && <SettingsMenu />} */}
+            {isOpen && <p>HELLO</p>}
+          </div>
+        )}
       </div>
     </FocusTrap>
   )
