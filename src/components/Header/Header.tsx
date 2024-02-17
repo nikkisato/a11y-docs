@@ -1,11 +1,12 @@
 // Header.jsx
-import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
-import SettingsIcon from '@mui/icons-material/Settings'
 import SearchIcon from '@mui/icons-material/Search'
+import SettingsIcon from '@mui/icons-material/Settings'
 import classNames from 'classnames'
-import Input from '../Input/Input'
+import React, { ReactNode, useState } from 'react'
+
 import MenuDrawer from '../MenuDrawer/MenuDrawer'
+import SearchInput from '../SearchInput/SearchInput'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -31,14 +32,7 @@ export default function Header() {
           </button>
         </div>
         <div className={styles.headerMiddle}>
-          <Input
-            placeholder="Search"
-            id="search"
-            name="search"
-            type="text"
-            label="Search"
-            icon={<SearchIcon />}
-          />
+          <SearchInput icon={<SearchIcon />} />
         </div>
         <div className={styles.headerRight}>
           {/* Conditionally render the SettingsIcon and pass the handleMenuClose callback */}

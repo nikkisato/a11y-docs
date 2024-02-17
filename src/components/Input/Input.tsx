@@ -1,16 +1,17 @@
 'use client'
 
 // import React from 'react';
+import classNames from 'classnames'
+
 import IconButton from '../IconButton/IconButton'
 import styles from './Input.module.css'
-
 interface Props {
   label: string
   type: string
   placeholder: string
   id: string
   name: string
-  icon?: React.ReactNode
+  className?: string
 }
 
 export default function Input({
@@ -19,10 +20,11 @@ export default function Input({
   placeholder = '',
   id = '',
   name = '',
-  icon = false,
+  className = '',
 }: Props) {
+  console.log('className', className)
   return (
-    <div className={styles.inputContainer}>
+    <div className={classNames(className, styles.inputContainer)}>
       <label className="sr-only" htmlFor={id}>
         {label}
       </label>
@@ -33,7 +35,6 @@ export default function Input({
         name={name}
         className={styles.input}
       />
-      <IconButton type="button" icon={icon} iconRight={true} />
     </div>
   )
 }
