@@ -6,6 +6,7 @@ interface Props {
   iconLeft?: boolean
   iconRight?: boolean
   type: 'button' | 'submit'
+  className?: string
 }
 
 export default function IconButton({
@@ -14,10 +15,11 @@ export default function IconButton({
   iconRight = false,
   iconLeft = false,
   type,
+  className = '',
 }: Props) {
   return (
     <>
-      <button type={type}>
+      <button type={type} className={className}>
         {iconLeft && icon}
         {text}
         {iconRight && icon}
