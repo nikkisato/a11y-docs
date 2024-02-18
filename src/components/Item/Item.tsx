@@ -1,5 +1,6 @@
 import React from 'react'
-export default function MenuItem({ children, ...props }) {
+
+export default function Item({ children, ...props }) {
   const listItemProps = {
     ...props,
     'data-menubar-listitem': '',

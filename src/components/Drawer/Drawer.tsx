@@ -1,77 +1,65 @@
+// GenericDrawer.jsx
 import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
 import FocusTrap from 'focus-trap-react'
+import React from 'react'
 
-import { useDrawer } from '../../context/ContextMenu'
 import Menu from '../Menu/Menu'
+import SettingsMenu from '../SettingsMenu/SettingsMenu'
 import styles from './Drawer.module.css'
 
 interface DrawerProps {
-  top?: boolean
-  bottom?: boolean
-  left?: boolean
-  right?: boolean
-  closeButton?: boolean
   id: string
+  isOpen: boolean
+  onClose: () => void
+  type: 'menu' | 'settings'
+  closeButtonPosition: 'left' | 'right'
 }
 
 export default function Drawer({
-  top,
-  bottom,
-  left,
-  right,
-  closeButton,
   id,
+  isOpen,
+  onClose,
+  type,
+  closeButtonPosition,
 }: DrawerProps) {
-  const { isDrawerOpen, setIsDrawerOpen } = useDrawer()
+  const drawerClass = classNames({
+    [styles.open]: isOpen,
+    [styles.drawer]: true,
+    [styles[type]]: true,
+    [styles[`closeButton-${closeButtonPosition}`]]: true,
+    [styles.menuDrawer]: type === 'menu',
+    [styles.settingsDrawer]: type === 'settings',
+  })
 
-  const handleClose = () => {
-    const drawer = document.getElementById('drawer')
-
-    setIsDrawerOpen((isDrawerOpen) => !isDrawerOpen)
-    if (drawer.classList.contains(styles.open)) {
-      drawer.classList.remove(styles.open)
-    }
+  let drawerContent
+  if (type === 'menu') {
+    drawerContent = <Menu />
+  } else if (type === 'settings') {
+    drawerContent = <SettingsMenu />
   }
 
-  const drawerClass = top
-    ? styles.top
-    : bottom
-    ? styles.bottom
-    : left
-    ? styles.left
-    : right
-    ? styles.right
-    : styles.left
-
-  const closeDrawerClass = top
-    ? styles.closeTop
-    : bottom
-    ? styles.closeBottom
-    : left
-    ? styles.closeLeft
-    : right
-    ? styles.closeRight
-    : styles.closeLeft
+  let closeButtonStyle
+  if (closeButtonPosition === 'left') {
+    closeButtonStyle = styles.closeButtonLeft
+  } else if (closeButtonPosition === 'right') {
+    closeButtonStyle = styles.closeButtonRight
+  }
 
   return (
-    <FocusTrap active={isDrawerOpen}>
-      <div id={id} className={classNames(styles.drawer, drawerClass)}>
-        {closeButton && (
+    <FocusTrap active={isOpen}>
+      <div id={id} className={drawerClass}>
+        {isOpen && (
           <button
+            onClick={onClose}
             aria-label="Close Drawer"
-            id="closeDrawerButton"
-            className={classNames(
-              'icon',
-              isDrawerOpen ? styles.open : '',
-              closeDrawerClass,
-            )}
-            onClick={handleClose}
+            className={classNames(styles.closeButton, closeButtonStyle)}
           >
-            <CloseIcon />
+            <CloseIcon className="icon" />
           </button>
         )}
-        <Menu />
+
+        {isOpen && <div className={styles.drawerContent}>{drawerContent}</div>}
       </div>
     </FocusTrap>
   )

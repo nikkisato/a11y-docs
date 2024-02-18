@@ -1,5 +1,5 @@
-import SettingsBar from '../SettingsBar/SettingsBar'
-import SettingsItem from '../SettingsItem/SettingsItem'
+import Bar from '../Bar/Bar'
+import Item from '../Item/Item'
 import styles from './SettingsMenu.module.css'
 
 const options = [
@@ -11,15 +11,15 @@ const options = [
 export default function SettingsMenu() {
   return (
     <nav aria-label="Settings Navigation" className={styles.container}>
-      {/* <SettingsBar aria-label="Primary Navigation">
+      {/* <Bar aria-label="Primary Navigation">
         {options?.map((code) => {
           return (
-            <SettingsItem key={code._id}>
+            <Item key={code._id}>
               <a href={`/code/${code.slug.current}`}>{code.title}</a>
-            </SettingsItem>
+            </Item>
           )
         })}
-      </SettingsBar> */}
+      </Bar> */}
     </nav>
   )
 }
