@@ -3,11 +3,10 @@ import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
 import classNames from 'classnames'
-import React, { ReactNode, useState } from 'react'
+import React, { useState } from 'react'
 
-import MenuDrawer from '../MenuDrawer/MenuDrawer'
+import Drawer from '../Drawer/Drawer'
 import SearchInput from '../SearchInput/SearchInput'
-import SettingDrawer from '../SettingsDrawer/SettingsDrawer'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -51,16 +50,20 @@ export default function Header() {
         </div>
       </header>
 
-      <SettingDrawer
+      <Drawer
         isOpen={isSettingsDrawerOpen}
         id="menuSettings"
         onClose={handleSettingsClose}
+        type="settings"
+        closeButtonPosition="right"
       />
 
-      <MenuDrawer
+      <Drawer
         isOpen={isMenuDrawerOpen}
         onClose={handleMenuClose}
         id="menuDrawer"
+        type="menu"
+        closeButtonPosition="left"
       />
     </>
   )

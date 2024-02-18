@@ -1,7 +1,7 @@
 import { useMenu } from '~/context/ContextMenu'
 
-import { MenuBar } from '../MenuBar'
-import { MenuItem } from '../MenuItem'
+import Bar from '../Bar/Bar'
+import Item from '../Item/Item'
 import styles from './Menu.module.css'
 
 export default function Menu() {
@@ -9,15 +9,15 @@ export default function Menu() {
 
   return (
     <nav aria-label="Primary Navigation" className={styles.nav}>
-      <MenuBar aria-label="Primary Navigation">
+      <Bar aria-label="Primary Navigation">
         {codes?.map((code) => {
           return (
-            <MenuItem key={code._id}>
+            <Item key={code._id}>
               <a href={`/code/${code.slug.current}`}>{code.title}</a>
-            </MenuItem>
+            </Item>
           )
         })}
-      </MenuBar>
+      </Bar>
     </nav>
   )
 }

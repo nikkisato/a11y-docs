@@ -1,4 +1,4 @@
-export default function MenuBar({ children, ...props }) {
+export default function Bar({ children, ...props }) {
   const listProps = {
     ...props,
     // 'aria-orientation': 'horizontal',

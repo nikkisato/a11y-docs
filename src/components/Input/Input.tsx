@@ -22,7 +22,6 @@ export default function Input({
   name = '',
   className = '',
 }: Props) {
-  console.log('className', className)
   return (
     <div className={classNames(className, styles.inputContainer)}>
       <label className="sr-only" htmlFor={id}>
