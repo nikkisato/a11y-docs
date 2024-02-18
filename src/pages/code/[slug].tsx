@@ -15,8 +15,6 @@ export default function CodePage() {
 
         const code = codes.filter((code) => {
           if (code.slug.current === slug) {
-            console.log('code', code)
-
             return code
           }
           // else {
