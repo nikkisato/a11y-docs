@@ -1,4 +1,3 @@
-// GenericDrawer.jsx
 import CloseIcon from '@mui/icons-material/Close'
 import classNames from 'classnames'
 import FocusTrap from 'focus-trap-react'

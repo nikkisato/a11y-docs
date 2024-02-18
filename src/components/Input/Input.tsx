@@ -1,9 +1,7 @@
 'use client'
 
-// import React from 'react';
 import classNames from 'classnames'
 
-import IconButton from '../IconButton/IconButton'
 import styles from './Input.module.css'
 interface Props {
   label: string

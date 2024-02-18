@@ -8,7 +8,6 @@ import styles from './CodeContainer.module.css'
 export default function CodeContainer({ code }) {
   const singleCode = code[0]
   console.log('singleCode', singleCode)
-  // console.log('singleCode', singleCode?.content[0].children[0].text)
 
   return (
     <div className={styles.codeContainer}>

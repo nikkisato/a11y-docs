@@ -33,7 +33,7 @@
 
 [] Accessible Content Sliders
 
-[] Accessible Close Button
+[x] Accessible Close Button
 
 [] Accessible Checkboxes
 
@@ -41,7 +41,7 @@
 
 [] Accessible Horizontal Dividers
 
-[] Accessible Inputs
+[x] Accessible Inputs
 
 [] Accessible Tap/Click Menu
 
@@ -69,7 +69,7 @@
 
 [] Accessible Forms
 
-[] Accessible Drawer
+[x] Accessible Drawer
 
 - Position Top Left, Top Right, Bottom Left, Bottom Right
 - Reusable Component to be able to use mini cart drawer or mega menu
