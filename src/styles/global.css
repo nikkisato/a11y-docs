@@ -9,3 +9,8 @@ body {
 * {
 	box-sizing: border-box;
 }
+
+main { 
+	height:500vh;
+	background-color: blue;
+}

@@ -11,6 +11,8 @@ import { MenuProvider } from '~/context/ContextMenu'
 import { type Code } from '~/lib/sanity.queries'
 import Middleware from '~/middlewear/middlewear'
 
+import ScreenSizeProvider from '../context/ContextScreenSize' // Import the ScreenSizeProvider
+
 export interface SharedPageProps {
   draftMode: boolean
   token: string
@@ -31,10 +33,12 @@ export default function App({
           {children}
         </Middleware>
       ) : (
-        <MenuProvider draftMode token={token} codes={codes}>
-          <Component {...pageProps} />
-          {children}
-        </MenuProvider>
+        <ScreenSizeProvider>
+          <MenuProvider draftMode token={token} codes={codes}>
+            <Component {...pageProps} />
+            {children}
+          </MenuProvider>
+        </ScreenSizeProvider>
       )}
     </>
   )

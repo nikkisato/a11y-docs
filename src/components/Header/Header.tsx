@@ -2,13 +2,17 @@ import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import SettingsIcon from '@mui/icons-material/Settings'
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
+// import {
+//   ScreenSizeProvider,
+//   useScreenSize,
+// } from '../../context/ContextScreenSize'
 import Drawer from '../Drawer/Drawer'
 import SearchInput from '../SearchInput/SearchInput'
 import styles from './Header.module.css'
 
-export default function Header() {
+export default function Header({ isSticky, isTransparent, isStatic }) {
   const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false)
   const [isSettingsDrawerOpen, setIsSettingsDrawerOpen] = useState(false)
 
@@ -28,9 +32,15 @@ export default function Header() {
     setIsSettingsDrawerOpen(false)
   }
 
+  const headerClass = classNames(styles.headerContainer, {
+    [styles.stickyHeader]: isSticky,
+    [styles.transparentHeader]: isTransparent,
+    [styles.staticHeader]: isStatic,
+  })
+
   return (
     <>
-      <header className={styles.headerContainer}>
+      <header className={headerClass}>
         <div className={styles.headerLeft}>
           <button onClick={handleMenuOpen} aria-label="Open Menu">
             <MenuIcon

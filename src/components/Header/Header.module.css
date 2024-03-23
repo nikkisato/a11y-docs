@@ -4,8 +4,9 @@
 	grid-template-rows: 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 0px;
-	height: 10vh;
+	height: 11.5vh;
 	border-bottom: 2px solid #e6e6e6;
+	/* background-color: grey; */
 }
 
 .headerLeft {
@@ -30,3 +31,26 @@
 	align-items: center;
 	height: 10vh;
 }
+
+  
+  .stickyHeader {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background-color: #ffffff; /* Change the background color as needed */
+	z-index: 5; /* Ensure the header stays on top of other elements */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for a more elevated look */
+	background-color:green;
+  }
+  
+  /* .transparentHeader {
+	background-color: yellow !important;
+	position:fixed;
+	top:0;
+	width:100%;
+  }
+  
+  .staticHeader {
+	background-color: pink;
+  } */
+  

@@ -21,7 +21,7 @@
     "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.14.15",
     "@portabletext/react": "3.0.11",
-    "@sanity/client": "^6.15.4",
+    "@sanity/client": "^6.15.5",
     "@sanity/code-input": "^4.1.1",
     "@sanity/demo": "1.0.2",
     "@sanity/preview-kit": "^5.0.6",
