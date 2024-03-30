@@ -4,10 +4,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import classNames from 'classnames'
 import React, { useContext, useState } from 'react'
 
-// import {
-//   ScreenSizeProvider,
-//   useScreenSize,
-// } from '../../context/ContextScreenSize'
+import { useScreenSize } from '../../context/ContextScreenSize'
 import Drawer from '../Drawer/Drawer'
 import SearchInput from '../SearchInput/SearchInput'
 import styles from './Header.module.css'
@@ -32,6 +29,8 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
     setIsSettingsDrawerOpen(false)
   }
 
+  const { isMobile } = useScreenSize()
+
   const headerClass = classNames(styles.headerContainer, {
     [styles.stickyHeader]: isSticky,
     [styles.transparentHeader]: isTransparent,
@@ -50,12 +49,12 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
           </button>
         </div>
         <div className={styles.headerMiddle}>
-          <SearchInput icon={<SearchIcon />} />
+          {isMobile == false && <SearchInput icon={<SearchIcon />} />}
         </div>
         <div className={styles.headerRight}>
-          <button onClick={handleSettingsOpen} aria-label="Open Settings Menu">
+          {/* <button onClick={handleSettingsOpen} aria-label="Open Settings Menu">
             <SettingsIcon className={classNames('icon')} id="settingsMenu" />
-          </button>
+          </button> */}
         </div>
       </header>
 

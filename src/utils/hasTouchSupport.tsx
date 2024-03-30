@@ -4,9 +4,3 @@ export default function hasTouchSupport() {
   }
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0
 }
-
-//if (typeof window !== 'undefined' && hasTouchSupport()) {
-//     console.log('Mobile device detected');
-// } else {
-//   console.log('Desktop device detected');
-// }

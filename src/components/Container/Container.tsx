@@ -9,7 +9,6 @@ export default function Container({ children }) {
   useMenu()
   const { isMobile } = useScreenSize()
 
-  console.log('isMobile', isMobile)
   return (
     <div className={styles.container}>
       <SkipLink />

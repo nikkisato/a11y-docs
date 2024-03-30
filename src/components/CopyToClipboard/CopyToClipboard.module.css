@@ -3,6 +3,9 @@
     align-content: center;
     justify-content: center;
     height: 30px;
+    border: none;
+    padding: 5px;
+    background-color: transparent;
 }
 
 .copy span {

@@ -6,11 +6,11 @@ import ScreenSizeProvider from '../context/ContextScreenSize'
 
 const Middleware = ({ children, draftMode, token, codes }) => {
   return (
-    <MenuProvider draftMode={draftMode} token={token} codes={codes}>
-      <ScreenSizeProvider>
+    <ScreenSizeProvider>
+      <MenuProvider draftMode={draftMode} token={token} codes={codes}>
         <PreviewProvider token={token}>{children}</PreviewProvider>
-      </ScreenSizeProvider>
-    </MenuProvider>
+      </MenuProvider>
+    </ScreenSizeProvider>
   )
 }
 
