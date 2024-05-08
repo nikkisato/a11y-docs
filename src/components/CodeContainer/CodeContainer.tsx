@@ -5,38 +5,45 @@ import { getClient } from '../../lib/sanity.client'
 import CodeCard from '../CodeCard/CodeCard'
 import CustomComponentRenderer from '../CustomComponentRender/CustomComponentRender'
 import Heading from '../Heading/Heading'
-import SanityImage from '../SanityImage/SanityImage'
+import SanityImage from '../SanityImage/SanityImage' // Import the SanityImage component
 import styles from './CodeContainer.module.css'
 
 export default function CodeContainer({ code, mySanityData }) {
   const singleCode = code[0]
 
-  // Ensure mySanityData and imageData exist and are not null or undefined
-  const imageData = mySanityData?.mySanityData?.image ?? null
+  console.log('singleCode', singleCode)
 
-  console.log('imageData', imageData)
+  console.log('mySanityData', mySanityData)
+
+  // Ensure mySanityData and imageData exist and are not null or undefined
+  // const imageData = mySanityData?.image ?? null
+
+  // console.log('imageData', imageData)
 
   // Get image props using next-sanity-image hook
-  const imageProps = imageData
-    ? // eslint-disable-next-line react-hooks/rules-of-hooks
-      useNextSanityImage(getClient(), imageData)
-    : null
+  // const imageProps = imageData
+  //   ? useNextSanityImage(getClient(), imageData)
+  //   : null
 
   return (
     <div className={styles.codeContainer}>
       <Heading headingType="h3" text={singleCode?.title} />
       {/* <CustomComponentRenderer component={singleCode} /> */}
-      {singleCode?.content[0]?.children[0]?.text && (
+      {singleCode?.content && (
         <div className={styles.content}>
-          {singleCode?.content[0]?.children[0]?.text}
+          {singleCode.content.map((item, index) => (
+            <div key={index}>{item.children[0]?.text}</div>
+          ))}
         </div>
       )}
+
       {/* {imageProps && (
         <SanityImage
           src={imageProps.src}
-          alt={imageProps.alt}
+          alt="Alternative text"
           width={imageProps.width}
           height={imageProps.height}
+          // You can pass additional props if needed
         />
       )} */}
       <CodeCard code={singleCode} />
@@ -49,16 +56,20 @@ export const getServerSideProps = async function (context) {
   const { slug = '' } = context.query
 
   try {
-    const configuredSanityClient = getClient() // Initialize Sanity client
-    console.log('configuredSanity', configuredSanityClient)
+    const configuredSanityClient = getClient()
+
+    console.log('configuredSanityCLient', configuredSanityClient)
 
     const data = await configuredSanityClient.fetch(
       `{
         "mySanityData": *[_type == "mySanityType" && slug.current == $slug][0] {
           image {
             asset->{
-              ...,
-              metadata
+              _id,
+              url,
+              metadata {
+                ...
+              }
             }
           }
         }
@@ -66,11 +77,15 @@ export const getServerSideProps = async function (context) {
       { slug },
     )
 
-    console.log('data', data)
+    console.log('Fetched data:', data)
 
-    return { props: { mySanityData: data } } // Pass fetched data as props
+    if (!data.mySanityData) {
+      throw new Error('Data not found')
+    }
+
+    return { props: { mySanityData: data } }
   } catch (error) {
     console.error('Error fetching data from Sanity:', error)
-    return { props: { mySanityData: null } } // Return null data in case of error
+    return { props: { mySanityData: null } }
   }
 }
