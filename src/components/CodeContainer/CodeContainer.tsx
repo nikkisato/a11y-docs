@@ -10,8 +10,6 @@ import styles from './CodeContainer.module.css'
 export default function CodeContainer({ code }) {
   const singleCode = code[0]
 
-  console.log('singleCode', singleCode)
-
   return (
     <div className={styles.codeContainer}>
       <Heading headingType="h3" text={singleCode?.title} />
@@ -23,13 +21,12 @@ export default function CodeContainer({ code }) {
           ))}
         </div>
       )}
-      {/* <SanityImage
-        src={singleCode?.image}
+      <SanityImage
+        src={singleCode?.title}
         alt={singleCode?.title}
         width={500}
         height={500}
-      /> */}
-      {/* Use the SanityImage component */}
+      />
       <CodeCard code={singleCode} />
     </div>
   )
@@ -45,13 +42,9 @@ export const getServerSideProps = async function (context) {
 
   const data = await configuredSanityClient.fetch(
     `{
-			"mySanityData": *[_type == "mySanityType" && slug.current == $slug][0] {
-				image {
-					asset->{
-						...,
-						metadata
-					}
-				}
+			"mySanityData": *[_type == "codeBlock" && slug.current == $slug][0] {
+        title,
+        "imageUrl": image.asset->url
 			}
 		}`,
     { slug },
