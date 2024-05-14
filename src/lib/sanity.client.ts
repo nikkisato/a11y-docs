@@ -13,9 +13,6 @@ export function getClient(preview?: { token: string }): SanityClient {
     perspective: 'published',
   })
 
-  // Move imageUrlBuilder instantiation here
-  const builder = imageUrlBuilder(client)
-
   if (preview) {
     if (!preview.token) {
       throw new Error('You must provide a token to preview drafts')
@@ -31,8 +28,11 @@ export function getClient(preview?: { token: string }): SanityClient {
 }
 
 export function urlForImage(source: SanityImageSource) {
+  console.log('Before Client')
   const client = getClient()
+  console.log('Before Builder')
   const builder = imageUrlBuilder(client)
+  console.log('Before Return')
   return builder.image(source)
 }
 
