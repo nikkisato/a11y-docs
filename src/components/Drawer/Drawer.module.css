@@ -1,47 +1,46 @@
 .settingsDrawer {
-    background-color: #fff;
-    position: fixed;
-    z-index: 100;
-    width: 300px;
-    height: 100vh;
-    color: #fff;
-    transition: transform 0.3s ease-out;
-    transform: translateX(100%);
-    border: 2px solid black;
-    right: 0;
-  }
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  width: 300px;
+  height: 100vh;
+  color: #fff;
+  transition: transform 0.3s ease-out;
+  transform: translateX(100%);
+  border: 2px solid black;
+  right: 0;
+}
 
-  .menuDrawer {
-    background-color: #fff;
-    position: fixed;
-    z-index: 100;
-    width: 300px;
-    height: 100vh;
-    color: #fff;
-    transition: transform 0.3s ease-out;
-    transform: translateX(-100%);
-    border: 2px solid black;
-   
-  }
-  
-  .open {
-    transform: translateX(0) !important;
-  }
-  
-  .closeButtonRight {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 100;
-  }
+.menuDrawer {
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  width: 300px;
+  height: 100vh;
+  color: #fff;
+  transition: transform 0.3s ease-out;
+  transform: translateX(-100%);
+  border: 2px solid black;
+}
 
-  .closeButtonLeft {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .closeButton {
-    margin: 24px 0;
-  }
+.open {
+  transform: translateX(0) !important;
+}
+
+.closeButtonRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.closeButtonLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.closeButton {
+  margin: 24px 0;
+}

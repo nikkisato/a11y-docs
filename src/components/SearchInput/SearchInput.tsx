@@ -1,12 +1,14 @@
+// src/components/SearchInput.tsx
+
 import { IconButton } from '../IconButton'
 import Input from '../Input/Input'
 import styles from './SearchInput.module.css'
 
-interface Props {
+export interface Props {
   icon?: React.ReactNode
 }
 
-export default function SearchInput({ icon = false }: Props) {
+export default function SearchInput({ icon }: Props) {
   return (
     <form className={styles.container}>
       <Input
@@ -17,12 +19,14 @@ export default function SearchInput({ icon = false }: Props) {
         name="Search"
         className={styles.searchInput}
       />
-      <IconButton
-        type="button"
-        icon={icon}
-        iconRight={true}
-        className={styles.searchButton}
-      />
+      {icon && (
+        <IconButton
+          type="button"
+          icon={icon}
+          iconRight={true}
+          className={styles.searchButton}
+        />
+      )}
     </form>
   )
 }

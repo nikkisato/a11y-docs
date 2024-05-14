@@ -1,26 +1,50 @@
-'use client'
-import Image from 'next/image'
+import { useNextSanityImage } from 'next-sanity-image'
 
+import { getClient } from '../../lib/sanity.client'
 import CodeCard from '../CodeCard/CodeCard'
+import CustomComponentRenderer from '../CustomComponentRender/CustomComponentRender'
 import Heading from '../Heading/Heading'
+import SanityImage from '../SanityImage/SanityImage' // Import the SanityImage component
 import styles from './CodeContainer.module.css'
 
 export default function CodeContainer({ code }) {
   const singleCode = code[0]
-  console.log('singleCode', singleCode)
 
   return (
     <div className={styles.codeContainer}>
       <Heading headingType="h3" text={singleCode?.title} />
-      {singleCode?.content[0].children[0].text && (
+      {/* <CustomComponentRenderer component={singleCode} /> */}
+      {singleCode?.content && (
         <div className={styles.content}>
-          {singleCode?.content[0].children[0].text}
+          {singleCode.content.map((item, index) => (
+            <div key={index}>{item.children[0]?.text}</div>
+          ))}
         </div>
       )}
-      {singleCode?.image && (
-        <Image src={singleCode?.image?.asset?.url} alt={singleCode?.title} />
-      )}
+      <SanityImage
+        src={singleCode?.image}
+        alt={singleCode?.title}
+        width={500}
+        height={500}
+      />
       <CodeCard code={singleCode} />
     </div>
   )
+}
+
+// Fetch data from Sanity within getServerSideProps
+export const getServerSideProps = async function (context) {
+  const { slug = '' } = context.query
+  const configuredSanityClient = getClient()
+
+  const data = await configuredSanityClient.fetch(
+    `{
+			"mySanityData": *[_type == "codeBlock" && slug.current == $slug][0] {
+        title,
+        "imageUrl": image.asset->url
+			}
+		}`,
+    { slug },
+  )
+  return { props: data }
 }

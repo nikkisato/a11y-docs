@@ -38,7 +38,7 @@ export default async function preview(
 
   if (slug) {
     res.setDraftMode({ enable: true })
-    res.writeHead(307, { Location: `/code/${slug}` })
+    res.writeHead(307, { Location: `/${slug}` })
     res.end()
     return
   }

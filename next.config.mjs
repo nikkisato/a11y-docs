@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const config = {
-  images: { remotePatterns: [{ hostname: 'cdn.sanity.io' }] },
+  images: {
+    domains: ['cdn.sanity.io'],
+    remotePatterns: [{ hostname: 'cdn.sanity.io' }],
+  },
 }
 
 export default config
