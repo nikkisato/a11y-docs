@@ -22,7 +22,7 @@ export default function CodeContainer({ code }) {
         </div>
       )}
       <SanityImage
-        src={singleCode?.title}
+        src={singleCode?.image}
         alt={singleCode?.title}
         width={500}
         height={500}
