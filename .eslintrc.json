@@ -1,12 +1,7 @@
 {
   "root": true,
-  "extends": [
-    "next",
-    "plugin:storybook/recommended"
-  ],
-  "plugins": [
-    "simple-import-sort"
-  ],
+  "extends": ["next", "plugin:storybook/recommended"],
+  "plugins": ["simple-import-sort"],
   "rules": {
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",

@@ -1,38 +1,38 @@
 /* Default Link */
 .externalLink {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .externalLink:hover {
-    color: #0056b3;
-    text-decoration: underline;
-  }
-  
-  /* Primary Link */
-  .externalLink.primary {
-    color: #28a745;
-  }
-  
-  .externalLink.primary:hover {
-    color: #218838;
-  }
-  
-  /* Secondary Link */
-  .externalLink.secondary {
-    color: #6c757d;
-  }
-  
-  .externalLink.secondary:hover {
-    color: #545b62;
-  }
-  
-  /* Disabled Link */
-  .externalLink.disabled, .externalLink:disabled {
-    color: #6c757d;
-    pointer-events: none;
-    cursor: not-allowed;
-    text-decoration: none;
-  }
-  
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.externalLink:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Primary Link */
+.externalLink.primary {
+  color: #28a745;
+}
+
+.externalLink.primary:hover {
+  color: #218838;
+}
+
+/* Secondary Link */
+.externalLink.secondary {
+  color: #6c757d;
+}
+
+.externalLink.secondary:hover {
+  color: #545b62;
+}
+
+/* Disabled Link */
+.externalLink.disabled,
+.externalLink:disabled {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: not-allowed;
+  text-decoration: none;
+}

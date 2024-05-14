@@ -1,8 +1,8 @@
 // src/components/Button.stories.tsx
 
+import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon'
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon'
 
 import IconButton from './IconButton'
 

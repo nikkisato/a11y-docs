@@ -1,49 +1,48 @@
 .headerContainer {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 0px;
-	height: 11.5vh;
-	border-bottom: 2px solid #e6e6e6;
-	/* background-color: grey; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+  height: 11.5vh;
+  border-bottom: 2px solid #e6e6e6;
+  /* background-color: grey; */
 }
 
 .headerLeft {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 10vh;
 }
 
 .headerMiddle {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
 
 .headerRight {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 10vh;
 }
 
-  
-  .stickyHeader {
-	position: sticky;
-	top: 0;
-	width: 100%;
-	background-color: #ffffff; /* Change the background color as needed */
-	z-index: 5; /* Ensure the header stays on top of other elements */
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for a more elevated look */
-	background-color:green;
-  }
-  
-  /* .transparentHeader {
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff; /* Change the background color as needed */
+  z-index: 5; /* Ensure the header stays on top of other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for a more elevated look */
+  background-color: green;
+}
+
+/* .transparentHeader {
 	background-color: yellow !important;
 	position:fixed;
 	top:0;
@@ -53,4 +52,3 @@
   .staticHeader {
 	background-color: pink;
   } */
-  

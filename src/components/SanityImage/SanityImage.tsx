@@ -10,7 +10,6 @@ type Props = Omit<ImageProps, 'src'> & {
 }
 
 export default function SanityImage({ src, alt, ...props }: Props) {
-
   return (
     <Image
       src="Doesn't matter"
