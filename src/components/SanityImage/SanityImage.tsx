@@ -10,14 +10,8 @@ type Props = Omit<ImageProps, 'src'> & {
 }
 
 export default function SanityImage({ src, alt, ...props }: Props) {
+  const srcImage = urlForImage(src).url()
   return (
-    <Image
-      src="Doesn't matter"
-      alt={alt}
-      loader={({ width, quality = 100 }) =>
-        urlForImage(src).width(width).quality(quality).url()
-      }
-      {...props}
-    />
+    <Image src="Doesn't matter" alt={alt} loader={() => srcImage} {...props} />
   )
 }
