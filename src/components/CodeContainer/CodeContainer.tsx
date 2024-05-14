@@ -37,9 +37,6 @@ export const getServerSideProps = async function (context) {
   const { slug = '' } = context.query
   const configuredSanityClient = getClient()
 
-  console.log('slug', slug)
-  console.log('configuredSanityClient', configuredSanityClient)
-
   const data = await configuredSanityClient.fetch(
     `{
 			"mySanityData": *[_type == "codeBlock" && slug.current == $slug][0] {
@@ -49,6 +46,5 @@ export const getServerSideProps = async function (context) {
 		}`,
     { slug },
   )
-  console.log('data', data)
   return { props: data }
 }
