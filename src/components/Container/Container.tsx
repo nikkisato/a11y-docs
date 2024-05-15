@@ -13,7 +13,7 @@ export default function Container({ children }) {
     <div className={styles.container}>
       <SkipLink />
       <Header isSticky={true} isTransparent={false} isStatic={false} />
-      <main id="main" className={styles.main}>
+      <main data-testid="main" id="main" className={styles.main}>
         {children}
       </main>
       {/* <Footer /> */}

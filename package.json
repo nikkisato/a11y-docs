@@ -9,13 +9,15 @@
     "start": "next start",
     "type-check": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "playwright": "npx playwright test --ui"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.9.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.15",
@@ -70,6 +72,7 @@
     "prettier": "3.0.3",
     "prettier-plugin-packagejson": "2.4.6",
     "prettier-plugin-tailwindcss": "0.5.5",
+    "react-helmet": "^6.1.0",
     "storybook": "^8.0.10",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"

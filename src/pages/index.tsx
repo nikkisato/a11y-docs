@@ -1,4 +1,5 @@
 import type { InferGetStaticPropsType } from 'next'
+import { Helmet } from 'react-helmet'
 
 import Container from '~/components/Container/Container'
 
@@ -7,7 +8,14 @@ import { getStaticProps } from '../context/ContextMenu'
 const IndexPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { codes, children } = props
 
-  return <Container>{children}</Container>
+  return (
+    <Container>
+      <Helmet>
+        <title>{`A11y Docs`}</title>
+      </Helmet>
+      {children}
+    </Container>
+  )
 }
 
 export default IndexPage
