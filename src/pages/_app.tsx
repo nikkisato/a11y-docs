@@ -1,17 +1,16 @@
+// pages/_app.js or pages/_app.tsx
 import '~/styles/global.css'
 import '~/styles/reset.css'
 import '~/styles/icon.css'
 import '~/styles/accessibility.css'
 
 import type { AppProps } from 'next/app'
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
 import { lazy } from 'react'
 
 import { MenuProvider } from '~/context/ContextMenu'
-import { type Code } from '~/lib/sanity.queries'
-import Middleware from '~/middlewear/middlewear'
-
-import ScreenSizeProvider from '../context/ContextScreenSize' // Import the ScreenSizeProvider
+import ScreenSizeProvider from '~/context/ContextScreenSize' // Correct import path
+import { Code } from '~/lib/sanity.queries'
+import Middleware from '~/middleware/middleware'
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -25,16 +24,17 @@ export default function App({
   pageProps,
 }: AppProps<SharedPageProps>) {
   const { draftMode, token, children, codes } = pageProps
+
   return (
     <>
       {draftMode ? (
-        <Middleware draftMode token={token} codes={codes}>
+        <Middleware draftMode={draftMode} token={token} codes={codes}>
           <Component {...pageProps} />
           {children}
         </Middleware>
       ) : (
         <ScreenSizeProvider>
-          <MenuProvider draftMode token={token} codes={codes}>
+          <MenuProvider draftMode={draftMode} token={token} codes={codes}>
             <Component {...pageProps} />
             {children}
           </MenuProvider>

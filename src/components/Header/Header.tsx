@@ -29,7 +29,7 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
     setIsSettingsDrawerOpen(false)
   }
 
-  const { isMobile } = useScreenSize()
+  // const { isMobile } = useScreenSize()
 
   const headerClass = classNames(styles.headerContainer, {
     [styles.stickyHeader]: isSticky,
@@ -49,7 +49,7 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
           </button>
         </div>
         <div className={styles.headerMiddle}>
-          {isMobile == false && <SearchInput icon={<SearchIcon />} />}
+          {/* {isMobile == false && <SearchInput icon={<SearchIcon />} />} */}
         </div>
         <div className={styles.headerRight}>
           {/* <button onClick={handleSettingsOpen} aria-label="Open Settings Menu">
