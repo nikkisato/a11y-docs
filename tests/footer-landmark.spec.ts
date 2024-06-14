@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@chromatic-com/playwright'
 
 test.describe('footer', () => {
   test('there is an h2 for Footer', async ({ page }) => {

@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@chromatic-com/playwright'
 
 // Test the Main Tag is present
 test.describe('Skip Link', () => {

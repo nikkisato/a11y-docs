@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@chromatic-com/playwright'
 
 test('page has an H1', async ({ page }) => {
   await page.goto('/')

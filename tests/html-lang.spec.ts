@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@chromatic-com/playwright'
 
 test('html has a lang attribute', async ({ page }) => {
   await page.goto('/')
