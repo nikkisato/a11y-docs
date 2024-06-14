@@ -10,7 +10,9 @@
     "type-check": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "playwright": "npx playwright test --ui"
+    "playwright": "npx playwright test --ui",
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "test": "npx playwright test"
   },
   "prettier": {
     "semi": false,
