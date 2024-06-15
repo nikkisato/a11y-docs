@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "playwright": "npx playwright test --ui",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN_STORYBOOK",
     "test": "npx playwright test"
   },
   "prettier": {
