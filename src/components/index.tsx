@@ -1,13 +1,13 @@
 /*Layout */
-export * from './Footer'
-export * from './Header'
+export * from './Layouts/Footer'
+export * from './Layouts/Header'
 
 /*Components */
 export * from './Button'
 export * from './Card'
 export * from './CodeCard'
 export * from './CodeContainer'
-export * from './Container'
+export * from './Layouts/Container'
 export * from './CopyToClipboard'
 export * from './Drawer'
 export * from './ExternalLink'

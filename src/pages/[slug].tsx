@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router'
 
 import CodeContainer from '~/components/CodeContainer/CodeContainer'
-import Container from '~/components/Container/Container'
+import Container from '~/components/Layouts/Container/Container'
 import { MenuContext } from '~/context/ContextMenu'
 
 export default function CodePage() {

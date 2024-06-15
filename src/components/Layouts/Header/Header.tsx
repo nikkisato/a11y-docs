@@ -4,9 +4,9 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import classNames from 'classnames'
 import React, { useContext, useState } from 'react'
 
-import { useScreenSize } from '../../context/ContextScreenSize'
-import Drawer from '../Drawer/Drawer'
-import SearchInput from '../SearchInput/SearchInput'
+import { useScreenSize } from '../../../context/ContextScreenSize'
+import Drawer from '../../Drawer/Drawer'
+import SearchInput from '../../SearchInput/SearchInput'
 import styles from './Header.module.css'
 
 export default function Header({ isSticky, isTransparent, isStatic }) {
