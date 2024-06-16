@@ -15,10 +15,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap" rel="stylesheet">
 
-
-
-
-
 - [ ] Accordion
 - [ ] Alert
 - [ ] Alert Dialog
@@ -68,7 +64,6 @@
 - [ ] Radio Group
 - [ ] Rating
 - [ ] Select
-- [ ] Skeleton?
 - [x] Skip Link
 - [ ] Slider
 - [ ] Snackbar
@@ -88,6 +83,25 @@
 - [ ] Tree View
 - [ ] Typography
 - [ ] Video Players
+
+## Section Ideas
+
+- [ ] Hero Sections
+- [ ] Feature Section
+- [ ] CTA Sections
+- [ ] Pricing Sections
+- [ ] Header Sections
+- [ ] Newsletter Sections
+- [ ] Stats
+- [ ] Testimonals
+- [ ] Blog Sections
+- [ ] Contact Sections
+- [ ] Team Sections
+- [ ] Content Sections
+- [ ] Logo Clouds
+- [ ] FAQ
+- [ ] Footers
+- [ ] https://tailwindui.com/components
 
 ## Packages / Intergrations
 
