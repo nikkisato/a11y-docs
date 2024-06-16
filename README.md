@@ -78,5 +78,8 @@
 
 ## Packages / Intergrations
 
+- Playwright
+- Storybook
+
 - https://accesslint.com/
 - https://github.com/AccessLint/screenreaders
