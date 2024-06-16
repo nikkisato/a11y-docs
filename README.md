@@ -15,66 +15,79 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap" rel="stylesheet">
 
-[] Accessible Autocomplete Search
 
-[] Accessible Button
 
-[] Accessible Icon Buttons
 
-[] Accessible Links
 
-[] Accessible Icon Links
-
-[] Accessible Disabled Button
-
-[] Accessible Cards
-
-[] Accessible Carousels
-
-[] Accessible Content Sliders
-
-[x] Accessible Close Button
-
-[] Accessible Checkboxes
-
-[] Accessible Radio Buttons
-
-[] Accessible Horizontal Dividers
-
-[x] Accessible Inputs
-
-[] Accessible Tap/Click Menu
-
-[] Accessible Modals
-
-[] Accessible Password Fields
-
-[x] Accessible Skip Links
-
-[] Accessible SVG
-
-[] Accessible Tabs
-
-[] Accessible Tables
-
-[] Accessible Toggle Switches
-
-[] Accessible Tooltips
-
-[] Accessible Toggletips
-
-[] Accessible Video Players
-
-[] Accessible Audio Players
-
-[] Accessible Forms
-
-[x] Accessible Drawer
-
-- Position Top Left, Top Right, Bottom Left, Bottom Right
-- Reusable Component to be able to use mini cart drawer or mega menu
-
-[] Accessible Accordion
+- [ ] Accordion
+- [ ] Alert
+- [ ] Alert Dialog
+- [ ] App Bar: Top
+- [ ] App Bar: Bottom
+- [ ] Autocomplete
+- [ ] Autocomplete Search
+- [ ] Audio Players
+- [ ] Banner
+- [ ] Avatar
+- [ ] Badge
+- [ ] Bottom Navigation
+- [ ] Breadcrumbs
+- [ ] Button
+- [ ] Floating action Button
+- [ ] Forms
+- [ ] Button Group
+- [ ] Card
+- [ ] Checkbox
+- [ ] Chip
+- [ ] Carousel
+- [ ] Close Button
+- [ ] Content Sliders
+- [ ] Data Grid
+- [ ] Data Pickers
+- [ ] Dialog
+- [ ] Dividers
+- [x] Drawer
+- [ ] Horizontal Dividers
+- [ ] Icons
+- [ ] Inputs
+- [ ] Icon Links
+- [ ] Image List
+- [ ] Link
+- [ ] List
+- [ ] Masonry
+- [ ] Material Icons
+- [ ] Menu (Tap/Click Menu)
+- [ ] Modal
+- [ ] Navigation Rail
+- [ ] Pagination
+- [ ] Paper
+- [ ] Progress
+- [ ] Password Fields
+- [ ] Radio
+- [ ] Radio Buttons
+- [ ] Radio Group
+- [ ] Rating
+- [ ] Select
+- [ ] Skeleton?
+- [x] Skip Link
+- [ ] Slider
+- [ ] Snackbar
+- [ ] Speed dial
+- [ ] Stepper
+- [ ] Switch
+- [ ] SVG
+- [ ] Table
+- [ ] Tabs
+- [ ] Text Field
+- [ ] Timeline
+- [ ] Toggle Button
+- [ ] Toggle Switches
+- [ ] Toggle Tip
+- [ ] ToolTip
+- [ ] Transfer List?
+- [ ] Tree View
+- [ ] Typography
+- [ ] Video Players
 
 ## Packages / Intergrations
 
