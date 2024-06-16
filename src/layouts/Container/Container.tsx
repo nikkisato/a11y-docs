@@ -1,8 +1,9 @@
 // import { useMenu } from '../../context/ContextMenu'
-import { useScreenSize } from '../../../context/ContextScreenSize' // Import the useScreenSize hook
-import SkipLink from '../../SkipLink/SkipLink'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
+import SkipLink from '~/components/SkipLink/SkipLink'
+import { useScreenSize } from '~/context/ContextScreenSize' // Import the useScreenSize hook
+import Footer from '~/layouts/Footer/Footer'
+import Header from '~/layouts/Header/Header'
+
 import styles from './Container.module.css'
 
 export default function Container({ children }) {

@@ -1,6 +1,6 @@
 /*Layout */
-export * from './Layouts/Footer'
-export * from './Layouts/Header'
+export * from '~/layouts/Footer'
+export * from '~/layouts/Header'
 
 /*Components */
 export * from './Button'
@@ -13,10 +13,10 @@ export * from './ExternalLink'
 export * from './Heading'
 export * from './IconButton'
 export * from './Input'
-export * from './Layouts/Container'
 export * from './Menu'
 export * from './SearchInput'
 export * from './SettingsMenu'
 export * from './Sidebar'
 export * from './SkipLink'
 export * from './ToggleButton'
+export * from '~/layouts/Container'

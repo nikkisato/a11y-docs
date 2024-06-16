@@ -2,8 +2,8 @@ import SearchIcon from '@mui/icons-material/Search'
 import React from 'react'
 
 import { useMenu } from '~/context/ContextMenu'
+import { useScreenSize } from '~/context/ContextScreenSize'
 
-import { useScreenSize } from '../../context/ContextScreenSize'
 import SearchInput from '../SearchInput/SearchInput'
 import styles from './Menu.module.css'
 
@@ -34,6 +34,8 @@ export function Bar({ children, ...props }) {
 
 export default function Menu() {
   const { codes } = useMenu()
+
+  console.log('codes', codes)
 
   const { isMobile } = useScreenSize()
 
