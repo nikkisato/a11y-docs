@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
       </footer>
 
-      <Modal isOpen={handleModalOpen} onClose={handleModalClose} />
+      <Modal isOpen={isModalOpen} onClose={handleModalClose} />
     </>
   )
 }

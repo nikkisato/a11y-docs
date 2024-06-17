@@ -10,6 +10,8 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose }: ModalProps) {
+  console.log('Modal isOpen:', isOpen)
+
   const modalClass = classNames({
     [styles.open]: isOpen,
     [styles.modalContainer]: true,
@@ -19,24 +21,20 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
 
   return (
     <>
-      <FocusTrap active={isOpen}>
+      {/* <FocusTrap active={isOpen}>
         <div className={modalClass}>
           {isOpen && (
             <button
               onClick={onClose}
-              aria-label="Close Drawer"
+              aria-label="Close Modal"
               className={classNames(styles.closeButton)}
             >
               <CloseIcon className="icon" />
             </button>
           )}
-
-          <div>
-            <button>HELLO</button>
-          </div>
-          {/* {isOpen && <div className={styles.modalContent}>{modalContent}</div>} */}
+          {isOpen && <div className={styles.modalContent}>{modalContent}</div>}
         </div>
-      </FocusTrap>
+      </FocusTrap> */}
       <div className={styles.modalOverlay} />
     </>
   )
