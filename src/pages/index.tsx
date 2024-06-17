@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType } from 'next'
 import { Helmet } from 'react-helmet'
 
-import Container from '~/components/Container/Container'
+import Container from '~/layouts/Container/Container'
 
 import { getStaticProps } from '../context/ContextMenu'
 

@@ -2,8 +2,8 @@
 import { useRouter } from 'next/router'
 
 import CodeContainer from '~/components/CodeContainer/CodeContainer'
-import Container from '~/components/Container/Container'
 import { MenuContext } from '~/context/ContextMenu'
+import Container from '~/layouts/Container/Container'
 
 export default function CodePage() {
   const router = useRouter()

@@ -1,0 +1,22 @@
+.modalContainer {
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    position: absolute;
+    top: 20%;
+    width: 75vw;
+    left: 20%;
+    background-color: blue;
+    height: 75vh;
+
+}
+
+.modalOverlay {
+    height: 110vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+}

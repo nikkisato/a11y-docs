@@ -3,3 +3,39 @@
   flex-direction: row;
   margin: 50px;
 }
+
+/* Code Output */
+.card {
+  min-height: 300px;
+  max-height: 100%;
+  margin: 1rem;
+  position: relative;
+  max-width: 450px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card pre {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 20px !important;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgrey;
+  align-content: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 5px;
+  align-items: center;
+}
+
+.header h4 {
+  display: flex;
+  margin-top: 5px;
+  margin-left: 5px;
+}

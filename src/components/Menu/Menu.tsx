@@ -1,15 +1,41 @@
 import SearchIcon from '@mui/icons-material/Search'
+import React from 'react'
 
 import { useMenu } from '~/context/ContextMenu'
+import { useScreenSize } from '~/context/ContextScreenSize'
 
-import { useScreenSize } from '../../context/ContextScreenSize'
-import Bar from '../Bar/Bar'
-import Item from '../Item/Item'
 import SearchInput from '../SearchInput/SearchInput'
 import styles from './Menu.module.css'
 
+export function Item({ children, ...props }) {
+  const listItemProps = {
+    ...props,
+    'data-menubar-listitem': '',
+    role: 'none',
+  }
+
+  const childProps = {
+    'data-menubar-menuitem': '',
+    role: 'menuitem',
+  }
+
+  return <li {...listItemProps}>{React.cloneElement(children, childProps)}</li>
+}
+export function Bar({ children, ...props }) {
+  const listProps = {
+    ...props,
+    // 'aria-orientation': 'horizontal',
+    'data-menubar-list': '',
+    role: 'menubar',
+  }
+
+  return <ul {...listProps}>{children}</ul>
+}
+
 export default function Menu() {
   const { codes } = useMenu()
+
+  console.log('codes', codes)
 
   const { isMobile } = useScreenSize()
 
