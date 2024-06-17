@@ -42,7 +42,7 @@
 - [ ] Data Pickers
 - [ ] Dialog
 - [ ] Dividers
-- [x] Drawer
+- [ x ] Drawer
 - [ ] Horizontal Dividers
 - [ ] Icons
 - [ ] Inputs
@@ -64,7 +64,7 @@
 - [ ] Radio Group
 - [ ] Rating
 - [ ] Select
-- [x] Skip Link
+- [ x ] Skip Link
 - [ ] Slider
 - [ ] Snackbar
 - [ ] Speed dial

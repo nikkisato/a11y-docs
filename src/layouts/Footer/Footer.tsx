@@ -1,10 +1,22 @@
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import Link from 'next/link'
+import React, { useState } from 'react'
+
+import Modal from '~/components/Modal/Modal'
 
 import styles from './Footer.module.css'
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+  }
   return (
     <>
       <footer className={styles.footerContainer}>
@@ -25,6 +37,8 @@ export default function Footer() {
           <a href="#">Accessibility Statement </a>
         </div>
       </footer>
+
+      <Modal isOpen={handleModalOpen} onClose={handleModalClose} />
     </>
   )
 }

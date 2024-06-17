@@ -53,9 +53,9 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
           {isMobile == false && <SearchInput icon={<SearchIcon />} />}
         </div>
         <div className={styles.headerRight}>
-          {/* <button onClick={handleSettingsOpen} aria-label="Open Settings Menu">
+          <button onClick={handleSettingsOpen} aria-label="Open Settings Menu">
             <SettingsIcon className={classNames('icon')} id="settingsMenu" />
-          </button> */}
+          </button>
         </div>
       </header>
 
@@ -64,7 +64,7 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
         id="menuSettings"
         onClose={handleSettingsClose}
         type="settings"
-        closeButtonPosition="right"
+        closeButtonPosition="left"
       />
 
       <Drawer
@@ -72,7 +72,7 @@ export default function Header({ isSticky, isTransparent, isStatic }) {
         onClose={handleMenuClose}
         id="menuDrawer"
         type="menu"
-        closeButtonPosition="left"
+        closeButtonPosition="right"
       />
     </>
   )

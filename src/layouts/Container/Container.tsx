@@ -1,4 +1,5 @@
 // import { useMenu } from '../../context/ContextMenu'
+import Modal from '~/components/Modal/Modal'
 import SkipLink from '~/components/SkipLink/SkipLink'
 import { useScreenSize } from '~/context/ContextScreenSize' // Import the useScreenSize hook
 import Footer from '~/layouts/Footer/Footer'

@@ -4,7 +4,7 @@ import { getClient } from '../../lib/sanity.client'
 import CodeCard from '../CodeCard/CodeCard'
 import CustomComponentRenderer from '../CustomComponentRender/CustomComponentRender'
 import Heading from '../Heading/Heading'
-import SanityImage from '../SanityImage/SanityImage' // Import the SanityImage component
+import SanityImage from '../SanityImage/SanityImage'
 import styles from './CodeContainer.module.css'
 
 export default function CodeContainer({ code }) {
