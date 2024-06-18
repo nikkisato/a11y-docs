@@ -35,7 +35,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           {isOpen && <div className={styles.modalContent}>{modalContent}</div>}
         </div>
       </FocusTrap> */}
-      <div className={styles.modalOverlay} />
+      {isOpen && <div className={styles.modalOverlay} />}
     </>
   )
 }

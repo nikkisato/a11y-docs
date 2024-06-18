@@ -27,6 +27,7 @@
     "@portabletext/react": "3.0.11",
     "@sanity/client": "^6.15.7",
     "@sanity/code-input": "^4.1.1",
+    "@sanity/color-input": "^3.1.1",
     "@sanity/demo": "1.0.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/preview-kit": "^5.0.6",

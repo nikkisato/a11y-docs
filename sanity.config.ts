@@ -3,6 +3,7 @@
  */
 
 import { codeInput } from '@sanity/code-input'
+import { colorInput } from '@sanity/color-input'
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
@@ -69,6 +70,7 @@ export default defineConfig({
     visionTool({ defaultApiVersion: apiVersion }),
     media(),
     lighthousePlugin(),
+    colorInput(),
   ],
   // This is for the media plugin
   form: {
