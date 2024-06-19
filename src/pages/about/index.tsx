@@ -2,9 +2,9 @@ import { Helmet } from 'react-helmet'
 
 import Container from '~/layouts/Container/Container'
 import { getClient } from '~/lib/sanity.client'
-import styles from './about.module.css'
 
 import { fetchAboutPageData } from '../../lib/sanity.queries'
+import styles from './about.module.css'
 
 export async function getServerSideProps() {
   const client = getClient()
@@ -17,7 +17,6 @@ export async function getServerSideProps() {
 }
 
 export default function AboutPage({ data }) {
-  console.log('data', data)
   return (
     <>
       <Container>
@@ -25,7 +24,6 @@ export default function AboutPage({ data }) {
           <title>{`About`}</title>
         </Helmet>
         <div className={styles.container}>
-          {/* Render your data here */}
           <h1>{data.title}</h1>
 
           {data.blockContent.map((block) => {
