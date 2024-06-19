@@ -35,3 +35,18 @@ export interface Code {
   typescript: string
   liquid: string
 }
+
+export async function fetchAboutPageData(client: SanityClient) {
+  const query = `*[_type == "page" && title == "About Dev"][0]{
+    title,
+    heroSection,
+    content,
+    blockContent
+  }`
+  try {
+    const data = await client.fetch(query)
+    return data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
+}
