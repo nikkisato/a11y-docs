@@ -1,14 +1,12 @@
-import { defineArrayMember, defineType } from 'sanity'
+// Define blockContent type
+import { defineType } from 'sanity'
 
 export default defineType({
-  title: 'Block Content',
   name: 'blockContent',
   type: 'array',
   of: [
-    defineArrayMember({
-      title: 'Block',
+    {
       type: 'block',
-
       styles: [
         { title: 'Normal', value: 'normal' },
         { title: 'H1', value: 'h1' },
@@ -38,6 +36,6 @@ export default defineType({
           },
         ],
       },
-    }),
+    },
   ],
 })

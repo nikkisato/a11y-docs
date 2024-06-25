@@ -21,11 +21,12 @@ export default defineType({
         maxLength: 96,
       },
     },
-    // {
-    //   title: 'Hero Section',
-    //   name: 'heroSection',
-    //   type: 'heroSection',
-    // },
+    {
+      title: 'Hero Section',
+      name: 'heroSection',
+      type: 'heroSection',
+      to: [{ type: 'heroSectionDocument' }],
+    },
     // {
     //   title: 'Content',
     //   name: 'content',
