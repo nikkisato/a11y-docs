@@ -107,6 +107,13 @@
 
 - Playwright
 - Storybook
+- https://www.sanity.io/plugins/sanity-algolia
+- https://www.sanity.io/plugins/backups
+- https://www.sanity.io/plugins/copy-paste
+- https://www.sanity.io/plugins/preview-kit
+- https://www.sanity.io/plugins/sanity-plugin-inline-svg-input
+- https://www.sanity.io/plugins/rich-date-input
+- https://www.sanity.io/plugins/page-tree
 
 - https://accesslint.com/
 - https://github.com/AccessLint/screenreaders

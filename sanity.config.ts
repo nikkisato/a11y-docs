@@ -2,11 +2,15 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
+// import { inlineSvgInput } from '@focus-reactive/sanity-plugin-inline-svg-input'
 import { codeInput } from '@sanity/code-input'
+import { colorInput } from '@sanity/color-input'
+// import { richDate } from '@sanity/rich-date-input'
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { lighthousePlugin } from 'sanity-lighthouse-plugin'
+import { draftReviewPluginV3 } from 'sanity-plugin-draft-review-v3'
 import {
   defineUrlResolver,
   Iframe,
@@ -69,6 +73,11 @@ export default defineConfig({
     visionTool({ defaultApiVersion: apiVersion }),
     media(),
     lighthousePlugin(),
+    colorInput(),
+
+    draftReviewPluginV3({}),
+    // inlineSvgInput(),
+    // richDate(),
   ],
   // This is for the media plugin
   form: {
